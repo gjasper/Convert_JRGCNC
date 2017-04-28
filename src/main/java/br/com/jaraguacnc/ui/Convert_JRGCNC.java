@@ -5,11 +5,7 @@ import java.io.File;
 import javax.swing.*;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
-import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
-
-import br.com.jaraguacnc.model.Ask;
-import br.com.jaraguacnc.model.Line;
 import br.com.jaraguacnc.model.XML_JARAGUACNC;        
  
 public class Convert_JRGCNC {
