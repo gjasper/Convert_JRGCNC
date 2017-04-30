@@ -15,7 +15,7 @@ public class Line {
 	double positionCenterX;
 	double positionCenterY;
 	double diameter;
-	double depth;
+	int depth;
 	double startAngX;
 	double startAngY;
 	double stopAngX;
@@ -57,7 +57,7 @@ public class Line {
 		this.diameter = diameter;
 	}
 	@XmlElement(name="Depth")
-	public void setDepth(Double depth) {
+	public void setDepth(int depth) {
 		this.depth = depth;
 	}
 	@XmlElement(name="StartAng")
@@ -120,11 +120,8 @@ public class Line {
 	public void setDiameter(double diameter) {
 		this.diameter = diameter;
 	}
-	public double getDepth() {
+	public int getDepth() {
 		return depth;
-	}
-	public void setDepth(double depth) {
-		this.depth = depth;
 	}
 	public double getStartAngX() {
 		return startAngX;

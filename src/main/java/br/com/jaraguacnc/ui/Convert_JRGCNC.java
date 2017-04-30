@@ -6,6 +6,8 @@ import javax.swing.*;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
+
+import br.com.jaraguacnc.adapter.FormAdapter;
 import br.com.jaraguacnc.model.XML_JARAGUACNC;        
  
 public class Convert_JRGCNC {
@@ -37,7 +39,8 @@ public class Convert_JRGCNC {
 					JAXBContext jaxbContext = JAXBContext.newInstance(XML_JARAGUACNC.class);
 					Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
 					XML_JARAGUACNC xml = (XML_JARAGUACNC) jaxbUnmarshaller.unmarshal(file);
-					System.out.println(xml.toString());
+					FormAdapter adapter = new FormAdapter();
+					System.out.println(adapter.marshall(xml));
 	        		
 				} catch (JAXBException e) {
 					// TODO Auto-generated catch block
