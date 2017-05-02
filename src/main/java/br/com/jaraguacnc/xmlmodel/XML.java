@@ -1,10 +1,10 @@
-package br.com.jaraguacnc.model;
+package br.com.jaraguacnc.xmlmodel;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name="XML_JARAGUACNC")
-public class XML_JARAGUACNC {
+public class XML {
 
 	Project project;
 	Ask ask;
