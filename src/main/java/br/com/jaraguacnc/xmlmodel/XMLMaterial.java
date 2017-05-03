@@ -4,7 +4,7 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name="Material")
-public class Material {
+public class XMLMaterial {
 
 	String materialType;
 	String materialName;

@@ -12,6 +12,10 @@ public class Consts {
 	public static final int GP_LAYER = 8;
 	public static final int GP_LAYER_COLOR = 62;
 	
+	public static final int XML_TYPE_LINE = 1;
+	public static final int XML_TYPE_CIRCLE = 2;
+	public static final int XML_TYPE_ANG = 3;
+	
 	public static final long COLOR_RED = 1;
 	public static final long COLOR_GREEN = 3;
 	public static final long COLOR_BLUE = 5;

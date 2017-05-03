@@ -1,7 +1,7 @@
 package br.com.jaraguacnc.dxfwriter;
 
 import br.com.jaraguacnc.utils.Consts;
-import br.com.jaraguacnc.xmlmodel.Line;
+import br.com.jaraguacnc.xmlmodel.XMLLine;
 import br.com.jaraguacnc.xmlmodel.XML;
 
 public class FormWriter {
@@ -16,7 +16,7 @@ public class FormWriter {
 		dxfLine += "2" + "\r\n";
 		dxfLine += Consts.ENTITIES + "\r\n";
 		
-		for(Line line : xmlObject.getAsk().getLines()){
+		for(XMLLine line : xmlObject.getAsk().getLines()){
 			switch(line.getLineType()){
 				case 1:
 					dxfLine += lineAdapter.write(line);

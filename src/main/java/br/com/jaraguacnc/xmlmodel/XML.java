@@ -6,21 +6,21 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement(name="XML_JARAGUACNC")
 public class XML {
 
-	Project project;
-	Ask ask;
+	XMLProject project;
+	XMLAsk ask;
 	
-	public Project getProject() {
+	public XMLProject getProject() {
 		return project;
 	}
 	@XmlElement(name="Project")
-	public void setProject(Project project) {
+	public void setProject(XMLProject project) {
 		this.project = project;
 	}
-	public Ask getAsk() {
+	public XMLAsk getAsk() {
 		return ask;
 	}
 	@XmlElement(name="Ask")
-	public void setAsk(Ask ask) {
+	public void setAsk(XMLAsk ask) {
 		this.ask = ask;
 	}
 		

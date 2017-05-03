@@ -9,12 +9,12 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
-public class LineList {
+public class XMLLineList {
 	
-    List<Line> line = new ArrayList<Line>();
+    List<XMLLine> line = new ArrayList<XMLLine>();
 
     @XmlElement(name = "Line")
-    public void setList(List<Line> line) {
+    public void setList(List<XMLLine> line) {
         this.line = line;
     }
 }

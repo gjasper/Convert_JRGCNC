@@ -1,6 +1,6 @@
 package br.com.jaraguacnc.dxfmodel;
 
-public class Circle {
+public class DXFCircle extends DXFEntity{
 
 	double centerPointX;
 	double centerPointY;

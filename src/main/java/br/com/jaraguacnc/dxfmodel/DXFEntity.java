@@ -1,6 +1,6 @@
 package br.com.jaraguacnc.dxfmodel;
 
-public abstract class Entity {
+public abstract class DXFEntity {
 
 	String layer;
 

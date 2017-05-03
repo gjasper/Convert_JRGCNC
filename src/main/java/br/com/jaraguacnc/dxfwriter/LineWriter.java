@@ -1,10 +1,10 @@
 package br.com.jaraguacnc.dxfwriter;
 
-import br.com.jaraguacnc.xmlmodel.Line;
+import br.com.jaraguacnc.xmlmodel.XMLLine;
 
 public class LineWriter {
 
-	public String write(Line line){
+	public String write(XMLLine line){
 		String dxfLine = "";
 		
 		dxfLine += "0" + "\r\n";

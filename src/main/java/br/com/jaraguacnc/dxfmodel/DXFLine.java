@@ -1,6 +1,6 @@
 package br.com.jaraguacnc.dxfmodel;
 
-public class Line extends Entity{
+public class DXFLine extends DXFEntity{
 
 	double startPointX;
 	double startPointY;

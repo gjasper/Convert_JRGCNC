@@ -1,6 +1,6 @@
 package br.com.jaraguacnc.dxfmodel;
 
-public class Layer {
+public class DXFLayer {
 
 	String name;
 	String colorNumber;

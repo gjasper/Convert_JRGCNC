@@ -1,6 +1,6 @@
 package br.com.jaraguacnc.dxfmodel;
 
-public class Arc {
+public class DXFArc extends DXFEntity{
 
 	double centerPointX;
 	double centerPointY;
