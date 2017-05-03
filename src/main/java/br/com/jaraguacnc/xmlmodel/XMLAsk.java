@@ -1,4 +1,4 @@
-package br.com.jaraguacnc.model;
+package br.com.jaraguacnc.xmlmodel;
 
 import java.util.List;
 
@@ -6,23 +6,23 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name="Ask")
-public class Ask {
+public class XMLAsk {
 
-	Material material;
-	List<Line> lines;
+	XMLMaterial material;
+	List<XMLLine> lines;
 	
-	public Material getMaterial() {
+	public XMLMaterial getMaterial() {
 		return material;
 	}
 	@XmlElement(name="Material")
-	public void setMaterial(Material material) {
+	public void setMaterial(XMLMaterial material) {
 		this.material = material;
 	}
-	public List<Line> getLines() {
+	public List<XMLLine> getLines() {
 		return lines;
 	}
 	@XmlElement(name="Line")
-	public void setLines(List<Line> lines) {
+	public void setLines(List<XMLLine> lines) {
 		this.lines = lines;
 	}
 }

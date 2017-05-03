@@ -1,52 +1,33 @@
 package br.com.jaraguacnc.ui;
 
-import java.io.File;
+import java.awt.Dimension;
 
 import javax.swing.*;
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBException;
-import javax.xml.bind.Unmarshaller;
 
-import br.com.jaraguacnc.adapter.FormAdapter;
-import br.com.jaraguacnc.model.XML_JARAGUACNC;        
+import br.com.jaraguacnc.dxfwriter.FormWriter;
+import br.com.jaraguacnc.utils.Consts;
+import br.com.jaraguacnc.xmlmodel.XML;
+import br.com.jaraguacnc.xmlreader.Reader;        
  
 public class Convert_JRGCNC {
 
 	private static void createAndShowGUI() {
-        //Create and set up the window.
-        JFrame frame = new JFrame("HelloWorldSwing");
+        JFrame frame = new JFrame(Consts.APPLICATION_NAME);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
  
-        //Add the ubiquitous "Hello World" label.
-        JLabel label = new JLabel("Hello World");
-        frame.getContentPane().add(label);
- 
-        //Display the window.
+        frame.getContentPane().setPreferredSize(new Dimension(600, 300));
         frame.pack();
         frame.setVisible(true);
     }
  
     public static void main(String[] args) {
-        //Schedule a job for the event-dispatching thread:
-        //creating and showing this application's GUI.
         javax.swing.SwingUtilities.invokeLater(new Runnable() {
             public void run() {
                 createAndShowGUI();
-                
-				try {
-					
-					File file = new File("C:/classes/XML_JARAGUACNC.xml");
-					JAXBContext jaxbContext = JAXBContext.newInstance(XML_JARAGUACNC.class);
-					Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
-					XML_JARAGUACNC xml = (XML_JARAGUACNC) jaxbUnmarshaller.unmarshal(file);
-					FormAdapter adapter = new FormAdapter();
-					System.out.println(adapter.marshall(xml));
-	        		
-				} catch (JAXBException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-                   
+                Reader reader = new Reader();
+				XML xml = reader.read("C:/classes/XML_JARAGUACNC.xml");
+				FormWriter writer = new FormWriter();
+				System.out.println(writer.write(xml));     
             }
         });
     }

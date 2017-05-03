@@ -1,10 +1,10 @@
-package br.com.jaraguacnc.model;
+package br.com.jaraguacnc.xmlmodel;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name="Project")
-public class Project {
+public class XMLProject {
 
 	String projectId;
 	String projectClient;
