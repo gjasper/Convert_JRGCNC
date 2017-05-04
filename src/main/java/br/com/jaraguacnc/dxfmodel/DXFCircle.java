@@ -1,11 +1,16 @@
 package br.com.jaraguacnc.dxfmodel;
 
+import br.com.jaraguacnc.utils.Consts;
+
 public class DXFCircle extends DXFEntity{
 
 	double centerPointX;
 	double centerPointY;
 	double radius;
 	
+	public DXFCircle(){
+		setType(Consts.DXF_TYPE_CIRCLE);
+	}
 	public double getCenterPointX() {
 		return centerPointX;
 	}

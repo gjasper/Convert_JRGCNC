@@ -4,10 +4,11 @@ import java.awt.Dimension;
 
 import javax.swing.*;
 
-import br.com.jaraguacnc.dxfwriter.FormWriter;
+import br.com.jaraguacnc.dxfbuilder.DXFBuilder;
+import br.com.jaraguacnc.facade.Facade;
 import br.com.jaraguacnc.utils.Consts;
 import br.com.jaraguacnc.xmlmodel.XML;
-import br.com.jaraguacnc.xmlreader.Reader;        
+import br.com.jaraguacnc.xmlreader.XMLReader;        
  
 public class Convert_JRGCNC {
 
@@ -22,12 +23,14 @@ public class Convert_JRGCNC {
  
     public static void main(String[] args) {
         javax.swing.SwingUtilities.invokeLater(new Runnable() {
+        	
+        	Facade facade = new Facade();
+        	
             public void run() {
                 createAndShowGUI();
-                Reader reader = new Reader();
-				XML xml = reader.read("C:/classes/XML_JARAGUACNC.xml");
-				FormWriter writer = new FormWriter();
-				System.out.println(writer.write(xml));     
+                String inFilePath = "C:/projetos/Convert_JRGCNC/sample.xml";
+                String outFilePath = "C:/projetos/Convert_JRGCNC/sample.dxf";
+                facade.convert(inFilePath, outFilePath);		
             }
         });
     }

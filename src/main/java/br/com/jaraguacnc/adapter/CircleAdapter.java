@@ -13,7 +13,11 @@ public class CircleAdapter {
 		dxfCircle.setCenterPointY(xmlLine.getPositionCenterY());
 		dxfCircle.setRadius(xmlLine.getDiameter()/(double) 2);
 		dxfCircle.setLayer(Integer.toString(xmlLine.getDepth()));
-		
+		if(xmlLine.getContinued() == 1){
+			dxfCircle.setContinued(true);
+		}else{
+			dxfCircle.setContinued(false);
+		}
 		return dxfCircle;
 	}
 	

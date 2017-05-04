@@ -1,0 +1,315 @@
+<XML_JARAGUACNC> 
+	<Project>
+		<ProjectId>047</ProjectId> <!-- id do projeto (controle interno) EX.: número de orçamento -->
+		<ProjectClient>521</ProjectClient> <!-- identificação do cliente (controle interno) EX.: número do cadastro do cliente-->
+		<ProjectName>Cozinha e Sala</ProjectName> <!-- nome do projeto (controle interno) -->
+	</Project>
+	<Ask> <!-- dados do painel -->
+		<Material>
+			<MaterialType>MDF</MaterialType> <!-- Tipo do material -->
+			<MaterialName>BRANCO</MaterialName> <!-- identificação da cor, textura... -->
+			<MaterialThickness>18</MaterialThickness> <!-- espessura -->
+			<MaterialAmount>1</MaterialAmount> <!-- Número de peças deste mesmo desenho -->
+			<MaterialEdge>1</MaterialEdge> <!-- Se tem borda na peça: 1, se não tem borda na peça: 0 -->
+		</Material>
+		<Line>
+			<LineName>1</LineName> <!-- 1: perfilagem (linha externa da peça), 2: furação ou rebaixo circular, 3: rebaixo não circular  -->
+			<LineType>1</LineType> <!-- 1: linha, 2: círculo ou 3: raio -->
+			<Continued>1</Continued> <!-- 1: tem continuidade na linha, 0: não tem continuidade -->
+			<StartLine>20,0</StartLine> <!-- posição inicial da linha em X e Y (se for círculo (furação) valor = -1 -->
+			<StopLine>20,20</StopLine> <!-- posição final da linha em X e Y (se for círculo (furação) valor = -1 -->
+			<PositionCerter>-1</PositionCerter> <!-- caso for furo, posição do centro do furo, caso não for furo, valor = -1 -->
+			<Diameter>-1</Diameter> <!-- caso for furo, diâmetro do furo, caso não for furo, valor = -1 -->
+			<Depth>-1</Depth> <!-- profundidade caso for furo ou rebaixo, caso seja LineName = 1, valor deste deve ser = -1 -->
+			<StartAng>-1</StartAng> <!-- Caso seja angulo, posição inicial (x=0,y=0) -->
+			<StopAng>-1</StopAng> <!-- Caso seja angulo, posição final (x=0,y=0) -->
+			<Ang>-1</Ang> <!-- raio, caso não seja angulo, valor = -1 -->
+		</Line>
+		<Line>
+			<LineName>1</LineName> <!-- 1: perfilagem (linha externa da peça), 2: furação ou rebaixo circular, 3: rebaixo não circular  -->
+			<LineType>1</LineType> <!-- 1: linha, 2: círculo ou 3: raio -->
+			<Continued>1</Continued> <!-- 1: tem continuidade na linha, 0: não tem continuidade -->
+			<StartLine>20,20</StartLine> <!-- posição inicial da linha em X e Y (se for círculo (furação) valor = -1 -->
+			<StopLine>0,20</StopLine> <!-- posição final da linha em X e Y (se for círculo (furação) valor = -1 -->
+			<PositionCerter>-1</PositionCerter> <!-- caso for furo, posição do centro do furo, caso não for furo, valor = -1 -->
+			<Diameter>-1</Diameter> <!-- caso for furo, diâmetro do furo, caso não for furo, valor = -1 -->
+			<Depth>-1</Depth> <!-- profundidade caso for furo ou rebaixo, caso seja LineName = 1, valor deste deve ser = -1 -->
+			<StartAng>-1</StartAng> <!-- Caso seja angulo, posição inicial (x=0,y=0) -->
+			<StopAng>-1</StopAng> <!-- Caso seja angulo, posição final (x=0,y=0) -->
+			<Ang>-1</Ang> <!-- raio, caso não seja angulo, valor = -1 -->
+		</Line>
+		<Line>
+			<LineName>1</LineName> <!-- 1: perfilagem (linha externa da peça), 2: furação ou rebaixo circular, 3: rebaixo não circular  -->
+			<LineType>1</LineType> <!-- 1: linha, 2: circulo ou 3: raio -->
+			<Continued>1</Continued> <!-- 1: tem continuidade na linha, 0: não tem continuidade -->
+			<StartLine>0,20</StartLine> <!-- posição inicial da linha em X e Y (se for círculo (furação) valor = -1 -->
+			<StopLine>0,220</StopLine> <!-- posição final da linha em X e Y (se for círculo (furação) valor = -1 -->
+			<PositionCerter>-1</PositionCerter> <!-- caso for furo, posição do centro do furo, caso não for furo, valor = -1 -->
+			<Diameter>-1</Diameter> <!-- caso for furo, diâmetro do furo, caso não for furo, valor = -1 -->
+			<Depth>-1</Depth> <!-- profundidade caso for furo ou rebaixo, caso seja LineName = 1, valor deste deve ser = -1 -->
+			<StartAng>-1</StartAng> <!-- Caso seja angulo, posição inicial (x=0,y=0) -->
+			<StopAng>-1</StopAng> <!-- Caso seja angulo, posição final (x=0,y=0) -->
+			<Ang>-1</Ang> <!-- raio, caso não seja angulo, valor = -1 -->
+		</Line>
+		<Line>
+			<LineName>1</LineName> <!-- 1: perfilagem (linha externa da peça), 2: furação ou rebaixo circular, 3: rebaixo não circular  -->
+			<LineType>1</LineType> <!-- 1: linha, 2: círculo ou 3: raio -->
+			<Continued>1</Continued> <!-- 1: tem continuidade na linha, 0: não tem continuidade -->
+			<StartLine>0,220</StartLine> <!-- posição inicial da linha em X e Y (se for círculo (furação) valor = -1 -->
+			<StopLine>350,220</StopLine> <!-- posição final da linha em X e Y (se for círculo (furação) valor = -1 -->
+			<PositionCerter>-1</PositionCerter> <!-- caso for furo, posição do centro do furo, caso não for furo, valor = -1 -->
+			<Diameter>-1</Diameter> <!-- caso for furo, diâmetro do furo, caso não for furo, valor = -1 -->
+			<Depth>-1</Depth> <!-- profundidade caso for furo ou rebaixo, caso seja LineName = 1, valor deste deve ser = -1 -->
+			<StartAng>-1</StartAng> <!-- Caso seja angulo, posição inicial (x=0,y=0) -->
+			<StopAng>-1</StopAng> <!-- Caso seja angulo, posição final (x=0,y=0) -->
+			<Ang>-1</Ang> <!-- raio, caso não seja angulo, valor = -1 -->
+		</Line>
+		<Line>
+			<LineName>1</LineName> <!-- 1: perfilagem (linha externa da peça), 2: furação ou rebaixo circular, 3: rebaixo não circular  -->
+			<LineType>1</LineType> <!-- 1: linha, 2: círculo ou 3: raio -->
+			<Continued>1</Continued> <!-- 1: tem continuidade na linha, 0: não tem continuidade -->
+			<StartLine>350,220</StartLine> <!-- posição inicial da linha em X e Y (se for círculo (furação) valor = -1 -->
+			<StopLine>350,0</StopLine> <!-- posição final da linha em X e Y (se for círculo (furação) valor = -1 -->
+			<PositionCerter>-1</PositionCerter> <!-- caso for furo, posição do centro do furo, caso não for furo, valor = -1 -->
+			<Diameter>-1</Diameter> <!-- caso for furo, diâmetro do furo, caso não for furo, valor = -1 -->
+			<Depth>-1</Depth> <!-- profundidade caso for furo ou rebaixo, caso seja LineName = 1, valor deste deve ser = -1 -->
+			<StartAng>-1</StartAng> <!-- Caso seja angulo, posição inicial (x=0,y=0) -->
+			<StopAng>-1</StopAng> <!-- Caso seja angulo, posição final (x=0,y=0) -->
+			<Ang>-1</Ang> <!-- raio, caso não seja angulo, valor = -1 -->
+		</Line>
+		<Line>
+			<LineName>1</LineName> <!-- 1: perfilagem (linha externa da peça), 2: furação ou rebaixo circular, 3: rebaixo não circular  -->
+			<LineType>1</LineType> <!-- 1: linha, 2: círculo ou 3: raio -->
+			<Continued>0</Continued> <!-- 1: tem continuidade na linha, 0: não tem continuidade -->
+			<StartLine>350,0</StartLine> <!-- posição inicial da linha em X e Y (se for círculo (furação) valor = -1 -->
+			<StopLine>20,0</StopLine> <!-- posição final da linha em X e Y (se for circulo (furação) valor = -1 -->
+			<PositionCerter>-1</PositionCerter> <!-- caso for furo, posição do centro do furo, caso não for furo, valor = -1 -->
+			<Diameter>-1</Diameter> <!-- caso for furo, diâmetro do furo, caso não for furo, valor = -1 -->
+			<Depth>-1</Depth> <!-- profundidade caso for furo ou rebaixo, caso seja LineName = 1, valor deste deve ser = -1 -->
+			<StartAng>-1</StartAng> <!-- Caso seja angulo, posição inicial (x=0,y=0) -->
+			<StopAng>-1</StopAng> <!-- Caso seja angulo, posição final (x=0,y=0) -->
+			<Ang>-1</Ang> <!-- raio, caso não seja angulo, valor = -1 -->
+		</Line>		
+		<Line>
+			<LineName>2</LineName> <!-- 1: perfilagem (linha externa da peça), 2: furação ou rebaixo circular, 3: rebaixo não circular  -->
+			<LineType>2</LineType> <!-- 1: linha, 2: círculo ou 3: raio -->
+			<Continued>0</Continued> <!-- 1: tem continuidade na linha, 0: não tem continuidade -->
+			<StartLine>-1,-1</StartLine> <!-- posição inicial da linha em X e Y (se for círculo (furação) valor = -1 -->
+			<StopLine>-1,-1</StopLine> <!-- posição final da linha em X e Y (se for círculo (furação) valor = -1 -->
+			<PositionCerter>25,180</PositionCerter> <!-- caso for furo, posição do centro do furo, X,Y , caso não for furo, valor = -1 -->
+			<Diameter>35</Diameter> <!-- caso for furo, diâmetro do furo, caso não for furo, valor = -1 -->
+			<Depth>11</Depth> <!-- profundidade caso for furo ou rebaixo, caso seja LineName = 1, valor deste deve ser = -1 -->
+			<StartAng>-1</StartAng> <!-- Caso seja angulo, posição inicial (x=0,y=0) -->
+			<StopAng>-1</StopAng> <!-- Caso seja angulo, posição final (x=0,y=0) -->
+			<Ang>-1</Ang> <!-- raio, caso não seja angulo, valor = -1 -->
+		</Line>	
+		<Line>
+			<LineName>2</LineName> <!-- 1: perfilagem (linha externa da peça), 2: furação ou rebaixo circular, 3: rebaixo não circular  -->
+			<LineType>2</LineType> <!-- 1: linha, 2: círculo ou 3: raio -->
+			<Continued>0</Continued> <!-- 1: tem continuidade na linha, 0: não tem continuidade -->
+			<StartLine>-1,-1</StartLine> <!-- posição inicial da linha em X e Y (se for círculo (furação) valor = -1 -->
+			<StopLine>-1,-1</StopLine> <!-- posição final da linha em X e Y (se for círculo (furação) valor = -1 -->
+			<PositionCerter>25,205</PositionCerter> <!-- caso for furo, posição do centro do furo, X,Y , caso não for furo, valor = -1 -->
+			<Diameter>4</Diameter> <!-- caso for furo, diâmetro do furo, caso não for furo, valor = -1 -->
+			<Depth>1</Depth> <!-- profundidade caso for furo ou rebaixo, caso seja LineName = 1, valor deste deve ser = -1 -->
+			<StartAng>-1</StartAng> <!-- Caso seja angulo, posição inicial (x=0,y=0) -->
+			<StopAng>-1</StopAng> <!-- Caso seja angulo, posição final (x=0,y=0) -->
+			<Ang>-1</Ang> <!-- raio, caso não seja angulo, valor = -1 -->
+		</Line>					
+		<Line>
+			<LineName>2</LineName> <!-- 1: perfilagem (linha externa da peça), 2: furação ou rebaixo circular, 3: rebaixo não circular  -->
+			<LineType>2</LineType> <!-- 1: linha, 2: círculo ou 3: raio -->
+			<Continued>0</Continued> <!-- 1: tem continuidade na linha, 0: não tem continuidade -->
+			<StartLine>-1,-1</StartLine> <!-- posição inicial da linha em X e Y (se for círculo (furação) valor = -1 -->
+			<StopLine>-1,-1</StopLine> <!-- posição final da linha em X e Y (se for círculo (furação) valor = -1 -->
+			<PositionCerter>25,155</PositionCerter> <!-- caso for furo, posição do centro do furo, X,Y , caso não for furo, valor = -1 -->
+			<Diameter>4</Diameter> <!-- caso for furo, diâmetro do furo, caso não for furo, valor = -1 -->
+			<Depth>1</Depth> <!-- profundidade caso for furo ou rebaixo, caso seja LineName = 1, valor deste deve ser = -1 -->
+			<StartAng>-1</StartAng> <!-- Caso seja angulo, posição inicial (x=0,y=0) -->
+			<StopAng>-1</StopAng> <!-- Caso seja angulo, posição final (x=0,y=0) -->
+			<Ang>-1</Ang> <!-- raio, caso não seja angulo, valor = -1 -->
+		</Line>		
+		<Line>
+			<LineName>2</LineName> <!-- 1: perfilagem (linha externa da peça), 2: furação ou rebaixo circular, 3: rebaixo não circular  -->
+			<LineType>2</LineType> <!-- 1: linha, 2: círculo ou 3: raio -->
+			<Continued>0</Continued> <!-- 1: tem continuidade na linha, 0: não tem continuidade -->
+			<StartLine>-1,-1</StartLine> <!-- posição inicial da linha em X e Y (se for círculo (furação) valor = -1 -->
+			<StopLine>-1,-1</StopLine> <!-- posição final da linha em X e Y (se for círculo (furação) valor = -1 -->
+			<PositionCerter>100,7</PositionCerter> <!-- caso for furo, posição do centro do furo, X,Y , caso não for furo, valor = -1 -->
+			<Diameter>5</Diameter> <!-- caso for furo, diâmetro do furo, caso não for furo, valor = -1 -->
+			<Depth>9</Depth> <!-- profundidade caso for furo ou rebaixo, caso seja LineName = 1, valor deste deve ser = -1 -->
+			<StartAng>-1</StartAng> <!-- Caso seja angulo, posição inicial (x=0,y=0) -->
+			<StopAng>-1</StopAng> <!-- Caso seja angulo, posição final (x=0,y=0) -->
+			<Ang>-1</Ang> <!-- raio, caso não seja angulo, valor = -1 -->
+		</Line>	
+		<Line>
+			<LineName>2</LineName> <!-- 1: perfilagem (linha externa da peça), 2: furação ou rebaixo circular, 3: rebaixo não circular  -->
+			<LineType>2</LineType> <!-- 1: linha, 2: círculo ou 3: raio -->
+			<Continued>0</Continued> <!-- 1: tem continuidade na linha, 0: não tem continuidade -->
+			<StartLine>-1,-1</StartLine> <!-- posição inicial da linha em X e Y (se for círculo (furação) valor = -1 -->
+			<StopLine>-1,-1</StopLine> <!-- posição final da linha em X e Y (se for círculo (furação) valor = -1 -->
+			<PositionCerter>250,7</PositionCerter> <!-- caso for furo, posição do centro do furo, X,Y , caso não for furo, valor = -1 -->
+			<Diameter>5</Diameter> <!-- caso for furo, diâmetro do furo, caso não for furo, valor = -1 -->
+			<Depth>9</Depth> <!-- profundidade caso for furo ou rebaixo, caso seja LineName = 1, valor deste deve ser = -1 -->
+			<StartAng>-1</StartAng> <!-- Caso seja angulo, posição inicial (x=0,y=0) -->
+			<StopAng>-1</StopAng> <!-- Caso seja angulo, posição final (x=0,y=0) -->
+			<Ang>-1</Ang> <!-- raio, caso não seja angulo, valor = -1 -->
+		</Line>						
+		<Line>
+			<LineName>3</LineName> <!-- 1: perfilagem (linha externa da peça), 2: furação ou rebaixo circular, 3: rebaixo não circular  -->
+			<LineType>1</LineType> <!-- 1: linha, 2: círculo ou 3: raio -->
+			<Continued>1</Continued> <!-- 1: tem continuidade na linha, 0: não tem continuidade -->
+			<StartLine>334,0</StartLine> <!-- posição inicial da linha em X e Y (se for círculo (furação) valor = -1 -->
+			<StopLine>334,220</StopLine> <!-- posição final da linha em X e Y (se for círculo (furação) valor = -1 -->
+			<PositionCerter>-1</PositionCerter> <!-- caso for furo, posição do centro do furo, X,Y , caso não for furo, valor = -1 -->
+			<Diameter>-1</Diameter> <!-- caso for furo, diâmetro do furo, caso não for furo, valor = -1 -->
+			<Depth>5</Depth> <!-- profundidade caso for furo ou rebaixo, caso seja LineName = 1, valor deste deve ser = -1 -->
+			<StartAng>-1</StartAng> <!-- Caso seja angulo, posição inicial (x=0,y=0) -->
+			<StopAng>-1</StopAng> <!-- Caso seja angulo, posição final (x=0,y=0) -->
+			<Ang>-1</Ang> <!-- raio, caso não seja angulo, valor = -1 -->
+		</Line>	
+		<Line>
+			<LineName>3</LineName> <!-- 1: perfilagem (linha externa da peça), 2: furação ou rebaixo circular, 3: rebaixo não circular  -->
+			<LineType>1</LineType> <!-- 1: linha, 2: círculo ou 3: raio -->
+			<Continued>1</Continued> <!-- 1: tem continuidade na linha, 0: não tem continuidade -->
+			<StartLine>334,220</StartLine> <!-- posição inicial da linha em X e Y (se for circulo (furação) valor = -1 -->
+			<StopLine>340,220</StopLine> <!-- posição final da linha em X e Y (se for circulo (furação) valor = -1 -->
+			<PositionCerter>-1</PositionCerter> <!-- caso for furo, posição do centro do furo, X,Y , caso não for furo, valor = -1 -->
+			<Diameter>-1</Diameter> <!-- caso for furo, diâmetro do furo, caso não for furo, valor = -1 -->
+			<Depth>5</Depth> <!-- profundidade caso for furo ou rebaixo, caso seja LineName = 1, valor deste deve ser = -1 -->
+			<StartAng>-1</StartAng> <!-- Caso seja angulo, posição inicial (x=0,y=0) -->
+			<StopAng>-1</StopAng> <!-- Caso seja angulo, posição final (x=0,y=0) -->
+			<Ang>-1</Ang> <!-- raio, caso não seja angulo, valor = -1 -->
+		</Line>	
+		<Line>
+			<LineName>3</LineName> <!-- 1: perfilagem (linha externa da peça), 2: furação ou rebaixo circular, 3: rebaixo não circular  -->
+			<LineType>1</LineType> <!-- 1: linha, 2: círculo ou 3: raio -->
+			<Continued>1</Continued> <!-- 1: tem continuidade na linha, 0: não tem continuidade -->
+			<StartLine>340,220</StartLine> <!-- posição inicial da linha em X e Y (se for círculo (furação) valor = -1 -->
+			<StopLine>340,0</StopLine> <!-- posição final da linha em X e Y (se for círculo (furação) valor = -1 -->
+			<PositionCerter>-1</PositionCerter> <!-- caso for furo, posição do centro do furo, X,Y , caso não for furo, valor = -1 -->
+			<Diameter>-1</Diameter> <!-- caso for furo, diâmetro do furo, caso não for furo, valor = -1 -->
+			<Depth>5</Depth> <!-- profundidade caso for furo ou rebaixo, caso seja LineName = 1, valor deste deve ser = -1 -->
+			<StartAng>-1</StartAng> <!-- Caso seja angulo, posição inicial (x=0,y=0) -->
+			<StopAng>-1</StopAng> <!-- Caso seja angulo, posição final (x=0,y=0) -->
+			<Ang>-1</Ang> <!-- raio, caso não seja angulo, valor = -1 -->
+		</Line>	
+		<Line>
+			<LineName>3</LineName> <!-- 1: perfilagem (linha externa da peça), 2: furação ou rebaixo circular, 3: rebaixo não circular  -->
+			<LineType>1</LineType> <!-- 1: linha, 2: círculo ou 3: raio -->
+			<Continued>0</Continued> <!-- 1: tem continuidade na linha, 0: não tem continuidade -->
+			<StartLine>340,0</StartLine> <!-- posição inicial da linha em X e Y (se for círculo (furação) valor = -1 -->
+			<StopLine>334,0</StopLine> <!-- posição final da linha em X e Y (se for círculo (furação) valor = -1 -->
+			<PositionCerter>-1</PositionCerter> <!-- caso for furo, posição do centro do furo, X,Y , caso não for furo, valor = -1 -->
+			<Diameter>-1</Diameter> <!-- caso for furo, diâmetro do furo, caso não for furo, valor = -1 -->
+			<Depth>5</Depth> <!-- profundidade caso for furo ou rebaixo, caso seja LineName = 1, valor deste deve ser = -1 -->
+			<StartAng>-1</StartAng> <!-- Caso seja angulo, posição inicial (x=0,y=0) -->
+			<StopAng>-1</StopAng> <!-- Caso seja angulo, posição final (x=0,y=0) -->
+			<Ang>-1</Ang> <!-- raio, caso não seja angulo, valor = -1 -->
+		</Line>	
+		<Line>
+			<LineName>3</LineName> <!-- 1: perfilagem (linha externa da peça), 2: furação ou rebaixo circular, 3: rebaixo não circular  -->
+			<LineType>3</LineType> <!-- 1: linha, 2: círculo ou 3: raio -->
+			<Continued>1</Continued> <!-- 1: tem continuidade na linha, 0: não tem continuidade -->
+			<StartLine>-1,-1</StartLine> <!-- posição inicial da linha em X e Y (se for círculo (furação) valor = -1 -->
+			<StopLine>-1,-1</StopLine> <!-- posição final da linha em X e Y (se for círculo (furação) valor = -1 -->
+			<PositionCerter>-1</PositionCerter> <!-- caso for furo, posição do centro do furo, X,Y , caso não for furo, valor = -1 -->
+			<Diameter>-1</Diameter> <!-- caso for furo, diâmetro do furo, caso não for furo, valor = -1 -->
+			<Depth>10</Depth> <!-- profundidade caso for furo ou rebaixo, caso seja LineName = 1, valor deste deve ser = -1 -->
+			<StartAng>147.5,77.5</StartAng> <!-- Caso seja angulo, posição inicial (x=0,y=0) -->
+			<StopAng>137.5,87.5</StopAng> <!-- Caso seja angulo, posição final (x=0,y=0) -->
+			<Ang>10</Ang> <!-- raio, caso não seja angulo, valor = -1 -->
+		</Line>	
+		<Line>
+			<LineName>3</LineName> <!-- 1: perfilagem (linha externa da peça), 2: furação ou rebaixo circular, 3: rebaixo não circular  -->
+			<LineType>1</LineType> <!-- 1: linha, 2: círculo ou 3: raio -->
+			<Continued>1</Continued> <!-- 1: tem continuidade na linha, 0: não tem continuidade -->
+			<StartLine>137.5,87.5</StartLine> <!-- posição inicial da linha em X e Y (se for círculo (furação) valor = -1 -->
+			<StopLine>137.5,112.5</StopLine> <!-- posição final da linha em X e Y (se for círculo (furação) valor = -1 -->
+			<PositionCerter>-1</PositionCerter> <!-- caso for furo, posição do centro do furo, X,Y , caso não for furo, valor = -1 -->
+			<Diameter>-1</Diameter> <!-- caso for furo, diâmetro do furo, caso não for furo, valor = -1 -->
+			<Depth>10</Depth> <!-- profundidade caso for furo ou rebaixo, caso seja LineName = 1, valor deste deve ser = -1 -->
+			<StartAng>-1,-1</StartAng> <!-- Caso seja angulo, posição inicial (x=0,y=0) -->
+			<StopAng>-1,-1</StopAng> <!-- Caso seja angulo, posição final (x=0,y=0) -->
+			<Ang>-1</Ang> <!-- raio, caso não seja angulo, valor = -1 -->
+		</Line>		
+		<Line>
+			<LineName>3</LineName> <!-- 1: perfilagem (linha externa da peça), 2: furação ou rebaixo circular, 3: rebaixo não circular  -->
+			<LineType>3</LineType> <!-- 1: linha, 2: círculo ou 3: raio -->
+			<Continued>1</Continued> <!-- 1: tem continuidade na linha, 0: não tem continuidade -->
+			<StartLine>-1,-1</StartLine> <!-- posição inicial da linha em X e Y (se for círculo (furação) valor = -1 -->
+			<StopLine>-1,-1</StopLine> <!-- posição final da linha em X e Y (se for círculo (furação) valor = -1 -->
+			<PositionCerter>-1</PositionCerter> <!-- caso for furo, posição do centro do furo, X,Y , caso não for furo, valor = -1 -->
+			<Diameter>-1</Diameter> <!-- caso for furo, diâmetro do furo, caso não for furo, valor = -1 -->
+			<Depth>10</Depth> <!-- profundidade caso for furo ou rebaixo, caso seja LineName = 1, valor deste deve ser = -1 -->
+			<StartAng>137.5,112.5</StartAng> <!-- Caso seja angulo, posição inicial (x=0,y=0) -->
+			<StopAng>147.5,122.5</StopAng> <!-- Caso seja angulo, posição final (x=0,y=0) -->
+			<Ang>10</Ang> <!-- raio, caso não seja angulo, valor = -1 -->
+		</Line>	
+		<Line>
+			<LineName>3</LineName> <!-- 1: perfilagem (linha externa da peça), 2: furação ou rebaixo circular, 3: rebaixo não circular  -->
+			<LineType>1</LineType> <!-- 1: linha, 2: círculo ou 3: raio -->
+			<Continued>1</Continued> <!-- 1: tem continuidade na linha, 0: não tem continuidade -->
+			<StartLine>147.5,122.5</StartLine> <!-- posição inicial da linha em X e Y (se for círculo (furação) valor = -1 -->
+			<StopLine>172.5,122.5</StopLine> <!-- posição final da linha em X e Y (se for círculo (furação) valor = -1 -->
+			<PositionCerter>-1</PositionCerter> <!-- caso for furo, posição do centro do furo, X,Y , caso não for furo, valor = -1 -->
+			<Diameter>-1</Diameter> <!-- caso for furo, diâmetro do furo, caso não for furo, valor = -1 -->
+			<Depth>10</Depth> <!-- profundidade caso for furo ou rebaixo, caso seja LineName = 1, valor deste deve ser = -1 -->
+			<StartAng>-1,-1</StartAng> <!-- Caso seja angulo, posição inicial (x=0,y=0) -->
+			<StopAng>-1,-1</StopAng> <!-- Caso seja angulo, posição final (x=0,y=0) -->
+			<Ang>-1</Ang> <!-- raio, caso não seja angulo, valor = -1 -->
+		</Line>		
+		<Line>
+			<LineName>3</LineName> <!-- 1: perfilagem (linha externa da peça), 2: furação ou rebaixo circular, 3: rebaixo não circular  -->
+			<LineType>3</LineType> <!-- 1: linha, 2: círculo ou 3: raio -->
+			<Continued>1</Continued> <!-- 1: tem continuidade na linha, 0: não tem continuidade -->
+			<StartLine>-1,-1</StartLine> <!-- posição inicial da linha em X e Y (se for círculo (furação) valor = -1 -->
+			<StopLine>-1,-1</StopLine> <!-- posição final da linha em X e Y (se for círculo (furação) valor = -1 -->
+			<PositionCerter>-1</PositionCerter> <!-- caso for furo, posição do centro do furo, X,Y , caso não for furo, valor = -1 -->
+			<Diameter>-1</Diameter> <!-- caso for furo, diâmetro do furo, caso não for furo, valor = -1 -->
+			<Depth>10</Depth> <!-- profundidade caso for furo ou rebaixo, caso seja LineName = 1, valor deste deve ser = -1 -->
+			<StartAng>172.5,122.5</StartAng> <!-- Caso seja angulo, posição inicial (x=0,y=0) -->
+			<StopAng>182.5,112.5</StopAng> <!-- Caso seja angulo, posição final (x=0,y=0) -->
+			<Ang>10</Ang> <!-- raio, caso não seja angulo, valor = -1 -->
+		</Line>		
+		<Line>
+			<LineName>3</LineName> <!-- 1: perfilagem (linha externa da peça), 2: furação ou rebaixo circular, 3: rebaixo não circular  -->
+			<LineType>1</LineType> <!-- 1: linha, 2: círculo ou 3: raio -->
+			<Continued>1</Continued> <!-- 1: tem continuidade na linha, 0: não tem continuidade -->
+			<StartLine>182.5,112.5</StartLine> <!-- posição inicial da linha em X e Y (se for círculo (furação) valor = -1 -->
+			<StopLine>182.5,87.5</StopLine> <!-- posição final da linha em X e Y (se for círculo (furação) valor = -1 -->
+			<PositionCerter>-1</PositionCerter> <!-- caso for furo, posição do centro do furo, X,Y , caso não for furo, valor = -1 -->
+			<Diameter>-1</Diameter> <!-- caso for furo, diâmetro do furo, caso não for furo, valor = -1 -->
+			<Depth>10</Depth> <!-- profundidade caso for furo ou rebaixo, caso seja LineName = 1, valor deste deve ser = -1 -->
+			<StartAng>-1,-1</StartAng> <!-- Caso seja angulo, posição inicial (x=0,y=0) -->
+			<StopAng>-1,-1</StopAng> <!-- Caso seja angulo, posição final (x=0,y=0) -->
+			<Ang>-1</Ang> <!-- raio, caso não seja angulo, valor = -1 -->
+		</Line>		
+		<Line>
+			<LineName>3</LineName> <!-- 1: perfilagem (linha externa da peça), 2: furação ou rebaixo circular, 3: rebaixo não circular  -->
+			<LineType>3</LineType> <!-- 1: linha, 2: círculo ou 3: raio -->
+			<Continued>1</Continued> <!-- 1: tem continuidade na linha, 0: não tem continuidade -->
+			<StartLine>-1,-1</StartLine> <!-- posição inicial da linha em X e Y (se for círculo (furação) valor = -1 -->
+			<StopLine>-1,-1</StopLine> <!-- posição final da linha em X e Y (se for círculo (furação) valor = -1 -->
+			<PositionCerter>-1</PositionCerter> <!-- caso for furo, posição do centro do furo, X,Y , caso não for furo, valor = -1 -->
+			<Diameter>-1</Diameter> <!-- caso for furo, diâmetro do furo, caso não for furo, valor = -1 -->
+			<Depth>10</Depth> <!-- profundidade caso for furo ou rebaixo, caso seja LineName = 1, valor deste deve ser = -1 -->
+			<StartAng>182.5,87.5</StartAng> <!-- Caso seja angulo, posição inicial (x=0,y=0) -->
+			<StopAng>172.5,77.5</StopAng> <!-- Caso seja angulo, posição final (x=0,y=0) -->
+			<Ang>10</Ang> <!-- raio, caso não seja angulo, valor = -1 -->
+		</Line>	
+		<Line>
+			<LineName>3</LineName> <!-- 1: perfilagem (linha externa da peça), 2: furação ou rebaixo circular, 3: rebaixo não circular  -->
+			<LineType>1</LineType> <!-- 1: linha, 2: círculo ou 3: raio -->
+			<Continued>0</Continued> <!-- 1: tem continuidade na linha, 0: não tem continuidade -->
+			<StartLine>172.5,77.5</StartLine> <!-- posição inicial da linha em X e Y (se for círculo (furação) valor = -1 -->
+			<StopLine>147.5,77.5</StopLine> <!-- posição final da linha em X e Y (se for círculo (furação) valor = -1 -->
+			<PositionCerter>-1</PositionCerter> <!-- caso for furo, posição do centro do furo, X,Y , caso não for furo, valor = -1 -->
+			<Diameter>-1</Diameter> <!-- caso for furo, diâmetro do furo, caso não for furo, valor = -1 -->
+			<Depth>10</Depth> <!-- profundidade caso for furo ou rebaixo, caso seja LineName = 1, valor deste deve ser = -1 -->
+			<StartAng>-1,-1</StartAng> <!-- Caso seja angulo, posição inicial (x=0,y=0) -->
+			<StopAng>-1,-1</StopAng> <!-- Caso seja angulo, posição final (x=0,y=0) -->
+			<Ang>-1</Ang> <!-- raio, caso não seja angulo, valor = -1 -->
+		</Line>															
+	</Ask>
+</XML_JARAGUACNC>

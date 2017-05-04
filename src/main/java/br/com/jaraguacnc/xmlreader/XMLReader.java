@@ -8,7 +8,7 @@ import javax.xml.bind.Unmarshaller;
 
 import br.com.jaraguacnc.xmlmodel.XML;
 
-public class Reader {
+public class XMLReader {
 
 	public XML read(String filePath){
 		try {

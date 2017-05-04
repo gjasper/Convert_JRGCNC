@@ -46,14 +46,14 @@ public class XMLLine {
 		this.stopLineX = Double.parseDouble(parts[0]); 
 		this.stopLineY = Double.parseDouble(parts[1]); 
 	}
-	@XmlElement(name="PositionCenter")
+	@XmlElement(name="PositionCerter")
 	public void setPositionCenter(String positionCenter) {
 		String[] parts = positionCenter.split(",", 2);
 		this.positionCenterX = Double.parseDouble(parts[0]); 
 		this.positionCenterY = Double.parseDouble(parts[1]); 
 	}
 	@XmlElement(name="Diameter")
-	public void setDiameter(Double diameter) {
+	public void setDiameter(double diameter) {
 		this.diameter = diameter;
 	}
 	@XmlElement(name="Depth")
@@ -73,7 +73,7 @@ public class XMLLine {
 		this.stopAngY = Double.parseDouble(parts[1]); 
 	}
 	@XmlElement(name="Ang")
-	public void setAng(Double ang) {
+	public void setAng(double ang) {
 		this.ang = ang;
 	}
 	
@@ -117,9 +117,6 @@ public class XMLLine {
 	public double getDiameter() {
 		return diameter;
 	}
-	public void setDiameter(double diameter) {
-		this.diameter = diameter;
-	}
 	public int getDepth() {
 		return depth;
 	}
@@ -149,9 +146,6 @@ public class XMLLine {
 	}
 	public double getAng() {
 		return ang;
-	}
-	public void setAng(double ang) {
-		this.ang = ang;
 	}
 	public int getLineName() {
 		return lineName;

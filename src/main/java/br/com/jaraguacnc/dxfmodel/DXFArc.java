@@ -1,5 +1,7 @@
 package br.com.jaraguacnc.dxfmodel;
 
+import br.com.jaraguacnc.utils.Consts;
+
 public class DXFArc extends DXFEntity{
 
 	double centerPointX;
@@ -8,6 +10,9 @@ public class DXFArc extends DXFEntity{
 	double startAngle;
 	double endAngle;
 	
+	public DXFArc(){
+		setType(Consts.DXF_TYPE_ARC);
+	}
 	public double getCenterPointX() {
 		return centerPointX;
 	}

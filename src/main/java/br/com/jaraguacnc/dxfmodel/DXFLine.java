@@ -1,12 +1,17 @@
 package br.com.jaraguacnc.dxfmodel;
 
+import br.com.jaraguacnc.utils.Consts;
+
 public class DXFLine extends DXFEntity{
 
 	double startPointX;
 	double startPointY;
 	double endPointX;
 	double endPointY;
-	
+
+	public DXFLine(){
+		setType(Consts.DXF_TYPE_LINE);
+	}
 	public double getStartPointX() {
 		return startPointX;
 	}
