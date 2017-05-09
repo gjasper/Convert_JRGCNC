@@ -18,7 +18,7 @@ public class Convert_JRGCNC {
  
         frame.getContentPane().setPreferredSize(new Dimension(600, 300));
         frame.pack();
-        frame.setVisible(true);
+        //frame.setVisible(true);
     }
  
     public static void main(String[] args) {
@@ -28,8 +28,8 @@ public class Convert_JRGCNC {
         	
             public void run() {
                 createAndShowGUI();
-                String inFilePath = "C:/projetos/Convert_JRGCNC/sample.xml";
-                String outFilePath = "C:/projetos/Convert_JRGCNC/sample.dxf";
+                String inFilePath = "C:/projetos/Convert_JRGCNC/files/sampleXML.xml";
+                String outFilePath = "C:/projetos/Convert_JRGCNC/files/sample.dxf";
                 facade.convert(inFilePath, outFilePath);		
             }
         });
