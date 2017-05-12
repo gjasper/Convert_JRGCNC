@@ -7,7 +7,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class XMLLine {
 	int lineName;
 	int lineType;
-	int continued;
+	boolean continued;
 	double startLineX;
 	double startLineY;
 	double stopLineX;
@@ -31,7 +31,7 @@ public class XMLLine {
 		this.lineType = lineType;
 	}
 	@XmlElement(name="Continued")
-	public void setContinued(int continued) {
+	public void setContinued(boolean continued) {
 		this.continued = continued;
 	}
 	@XmlElement(name="StartLine")
@@ -153,7 +153,7 @@ public class XMLLine {
 	public int getLineType() {
 		return lineType;
 	}
-	public int getContinued() {
+	public boolean isContinued() {
 		return continued;
 	}
 	

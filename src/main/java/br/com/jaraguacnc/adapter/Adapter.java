@@ -1,5 +1,8 @@
 package br.com.jaraguacnc.adapter;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import br.com.jaraguacnc.dxfmodel.DXF;
 import br.com.jaraguacnc.dxfmodel.DXFEntity;
 import br.com.jaraguacnc.utils.Consts;
@@ -37,6 +40,28 @@ public class Adapter {
 		}
 		
 		return dxf;
+	}
+	
+	
+	public Map<Integer, Integer> generateContinuityMap(XML xml){
+		
+		Map <Integer, Integer> map = new HashMap<Integer, Integer>();
+
+		for (int i = 0; i < xml.getAsk().getLines().size(); i++) {
+			if(xml.getAsk().getLines().get(i).isContinued() && (i == 0)){
+				map.put(i, Consts.CONTINUITY_START);
+			} else if (xml.getAsk().getLines().get(i).isContinued() && !xml.getAsk().getLines().get(i-1).isContinued()){
+				map.put(i, Consts.CONTINUITY_START);
+			} else if (xml.getAsk().getLines().get(i).isContinued() && xml.getAsk().getLines().get(i-1).isContinued()){
+				map.put(i, Consts.CONTINUITY_MID);
+			} else if (!xml.getAsk().getLines().get(i).isContinued() && xml.getAsk().getLines().get(i-1).isContinued()){
+				map.put(i, Consts.CONTINUITY_END);
+			} else {
+				map.put(i, Consts.CONTINUITY_NOT);
+			}
+		}
+		
+		return map;
 	}
 	
 }

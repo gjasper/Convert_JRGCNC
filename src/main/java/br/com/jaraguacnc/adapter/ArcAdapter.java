@@ -15,12 +15,7 @@ public class ArcAdapter {
 		dxfArc.setEndAngle(xmlLine.getStartAngY());
 		dxfArc.setRadius(xmlLine.getDiameter()/(double) 2);
 		dxfArc.setLayer(Integer.toString(xmlLine.getDepth()));
-		if(xmlLine.getContinued() == 1){
-			dxfArc.setContinued(true);
-		}else{
-			dxfArc.setContinued(false);
-		}
-		
+
 		return dxfArc;
 	}
 }

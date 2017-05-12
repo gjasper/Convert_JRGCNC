@@ -4,12 +4,9 @@ import java.awt.Dimension;
 
 import javax.swing.*;
 
-import br.com.jaraguacnc.dxfbuilder.DXFBuilder;
 import br.com.jaraguacnc.facade.Facade;
 import br.com.jaraguacnc.utils.Consts;
-import br.com.jaraguacnc.xmlmodel.XML;
-import br.com.jaraguacnc.xmlreader.XMLReader;        
- 
+
 public class Convert_JRGCNC {
 
 	private static void createAndShowGUI() {
@@ -28,7 +25,7 @@ public class Convert_JRGCNC {
         	
             public void run() {
                 createAndShowGUI();
-                String inFilePath = "C:/projetos/Convert_JRGCNC/files/sampleXML.xml";
+                String inFilePath = "C:/projetos/Convert_JRGCNC/files/sample.xml";
                 String outFilePath = "C:/projetos/Convert_JRGCNC/files/sample.dxf";
                 facade.convert(inFilePath, outFilePath);		
             }

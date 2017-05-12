@@ -4,15 +4,18 @@ import br.com.jaraguacnc.dxfmodel.DXF;
 import br.com.jaraguacnc.dxfmodel.DXFCircle;
 import br.com.jaraguacnc.dxfmodel.DXFEntity;
 import br.com.jaraguacnc.dxfmodel.DXFLine;
+import br.com.jaraguacnc.dxfmodel.DXFPolyline;
 import br.com.jaraguacnc.utils.Consts;
 import br.com.jaraguacnc.utils.GC;
 
 public class DXFBuilder {
-
+	
+	LineBuilder lineBuilder = new LineBuilder();
+	CircleBuilder circleBuilder = new CircleBuilder();
+	PolylineBuilder polylineBuilder = new PolylineBuilder();
+	
 	public String build(DXF dxfObject){
 		
-		LineBuilder lineBuilder = new LineBuilder();
-		CircleBuilder circleBuilder = new CircleBuilder();
 		String dxfOutput = "";
 
 		dxfOutput += GC.COMMENT + "\r\n";
@@ -30,6 +33,9 @@ public class DXFBuilder {
 				break;
 				case Consts.DXF_TYPE_CIRCLE:
 					dxfOutput += circleBuilder.build((DXFCircle) entity);
+				break;
+				case Consts.DXF_TYPE_POLYLINE:
+					dxfOutput += polylineBuilder.build((DXFPolyline) entity);
 				break;
 			}
 		}

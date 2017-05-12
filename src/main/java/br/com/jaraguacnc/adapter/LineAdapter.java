@@ -14,12 +14,6 @@ public class LineAdapter {
 		dxfLine.setEndPointX(xmlLine.getStopLineX());
 		dxfLine.setEndPointY(xmlLine.getStopLineY());
 		dxfLine.setLayer(Integer.toString(xmlLine.getDepth()));
-		if(xmlLine.getContinued() == 1){
-			dxfLine.setContinued(true);
-		}else{
-			dxfLine.setContinued(false);
-		}
-		
 		
 		return dxfLine;
 	}

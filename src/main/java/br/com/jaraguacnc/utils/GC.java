@@ -11,5 +11,7 @@ public class GC {
 	public static final int RADIUS = 40;
 	public static final int LAYER = 8;
 	public static final int LAYER_COLOR = 62;
+	public static final int VERTEX_FOLLOW = 66;
+	public static final int FLAG = 70;
 	
 }
