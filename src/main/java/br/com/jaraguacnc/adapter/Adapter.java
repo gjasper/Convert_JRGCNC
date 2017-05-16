@@ -41,7 +41,7 @@ public class Adapter {
 			}
 
 			
-			if(!dxf.getTables().contains(entity.getLayer())){
+			if(!dxf.getTables().contains(new DXFLayer(entity.getLayer()))){
 				DXFLayer newLayer = new DXFLayer();
 				newLayer.setName(entity.getLayer());
 				newLayer.setColorNumber(DXFLayer.nextColor(dxf));

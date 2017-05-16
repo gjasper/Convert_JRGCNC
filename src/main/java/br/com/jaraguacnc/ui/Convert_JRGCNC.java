@@ -29,6 +29,8 @@ public class Convert_JRGCNC {
                 String outFilePath = "C:/projetos/Convert_JRGCNC/files/sample.dxf";
                 facade.convert(inFilePath, outFilePath);		
             }
+            
+            
         });
     }
 }

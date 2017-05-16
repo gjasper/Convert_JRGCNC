@@ -21,4 +21,15 @@ public class DXF {
 		this.entities = entities;
 	}		
 	
+	public DXFLayer getLayerByName (String name){
+		for (int i = 0; i < tables.size(); i++) {
+			if(tables.get(i) instanceof DXFLayer){
+				if(tables.get(i).getName().equals(name)){
+					return (DXFLayer) tables.get(i);
+				}
+			}
+		}
+		return null;
+	}
+	
 }

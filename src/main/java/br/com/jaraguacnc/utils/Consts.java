@@ -42,6 +42,8 @@ public class Consts {
 	public static final String SEQEND = "SEQEND";
 	public static final String EOF = "EOF";
 	
+	public static final String PERFILAGEM = "PERFILAGEM";
+	
 	public static final int CONTINUITY_START = 1;
 	public static final int CONTINUITY_MID = 2;
 	public static final int CONTINUITY_END = 3;

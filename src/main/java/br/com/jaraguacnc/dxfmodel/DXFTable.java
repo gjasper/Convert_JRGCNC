@@ -17,17 +17,26 @@ public class DXFTable {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public boolean equals(Object o){
-		if(o.equals(this.getName())){
-			return true;
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((name == null) ? 0 : name.hashCode());
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (obj instanceof DXFLayer){
+			DXFLayer table = (DXFLayer) obj;
+			if (table.getName().equals(this.getName())){
+				return true;
+			}
+		} else if (obj instanceof DXFLtype) {
+			DXFLtype table = (DXFLtype) obj;
+			if (table.getName().equals(this.getName())){
+				return true;
+			}
 		}
 		return false;
-	}
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 17 * hash + (this.name != null ? this.name.hashCode() : 0);
-        return hash;
-    }
-	
+	}	
 }
