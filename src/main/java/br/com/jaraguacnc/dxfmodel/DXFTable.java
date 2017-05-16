@@ -1,18 +1,33 @@
 package br.com.jaraguacnc.dxfmodel;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class DXFTable {
 
-	List<DXFLayer> layers = new ArrayList<DXFLayer>();
-
-	public List<DXFLayer> getLayers() {
-		return layers;
+	String tableType;
+	String name;
+	
+	public String getTableType() {
+		return tableType;
 	}
-
-	public void setLayers(List<DXFLayer> layers) {
-		this.layers = layers;
+	public void setTableType(String tableType) {
+		this.tableType = tableType;
 	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public boolean equals(Object o){
+		if(o.equals(this.getName())){
+			return true;
+		}
+		return false;
+	}
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 17 * hash + (this.name != null ? this.name.hashCode() : 0);
+        return hash;
+    }
 	
 }

@@ -13,5 +13,7 @@ public class GC {
 	public static final int LAYER_COLOR = 62;
 	public static final int VERTEX_FOLLOW = 66;
 	public static final int FLAG = 70;
+	public static final int LTYPE = 70;
+	public static final int DESCRIPTION = 3;
 	
 }

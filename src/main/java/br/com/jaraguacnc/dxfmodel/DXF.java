@@ -19,7 +19,6 @@ public class DXF {
 	}
 	public void setEntities(List<DXFEntity> entities) {
 		this.entities = entities;
-	}
-		
+	}		
 	
 }

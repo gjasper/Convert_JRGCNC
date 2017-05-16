@@ -5,6 +5,8 @@ import java.util.Map;
 
 import br.com.jaraguacnc.dxfmodel.DXF;
 import br.com.jaraguacnc.dxfmodel.DXFEntity;
+import br.com.jaraguacnc.dxfmodel.DXFLayer;
+import br.com.jaraguacnc.dxfmodel.DXFLtype;
 import br.com.jaraguacnc.utils.Consts;
 import br.com.jaraguacnc.xmlmodel.XML;
 import br.com.jaraguacnc.xmlmodel.XMLLine;
@@ -18,6 +20,9 @@ public class Adapter {
 		CircleAdapter circleAdapter = new CircleAdapter();
 		
 		DXF dxf = new DXF();
+		DXFLtype lType = new DXFLtype();
+		
+		dxf.getTables().add(lType);
 		
 		for(XMLLine xmlLine : xml.getAsk().getLines()){
 			
@@ -33,6 +38,14 @@ public class Adapter {
 				case Consts.XML_TYPE_ANG:
 					entity = arcAdapter.marshall(xmlLine);
 				break;
+			}
+
+			
+			if(!dxf.getTables().contains(entity.getLayer())){
+				DXFLayer newLayer = new DXFLayer();
+				newLayer.setName(entity.getLayer());
+				newLayer.setColorNumber(DXFLayer.nextColor(dxf));
+				dxf.getTables().add(newLayer);
 			}
 			
 			dxf.getEntities().add(entity);
