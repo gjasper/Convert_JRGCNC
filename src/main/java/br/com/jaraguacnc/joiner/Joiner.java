@@ -22,14 +22,14 @@ public class Joiner {
 			switch(entry.getValue()){
 				case Consts.CONTINUITY_START:
 					polyline = new DXFPolyline(inputDXF.getEntities().get(entry.getKey()).getLayer());
-					polyline.getVertexList().add(vertexAdapter.firstVertex(inputDXF.getEntities().get(entry.getKey())));
-					polyline.getVertexList().add(vertexAdapter.marshall(inputDXF.getEntities().get(entry.getKey())));
+					polyline.getVertexList().add(vertexAdapter.marshallStartCoord(inputDXF.getEntities().get(entry.getKey())));
+					polyline.getVertexList().add(vertexAdapter.marshallEndCoord(inputDXF.getEntities().get(entry.getKey())));
 				break;
 				case Consts.CONTINUITY_MID:
-					polyline.getVertexList().add(vertexAdapter.marshall(inputDXF.getEntities().get(entry.getKey())));
+					polyline.getVertexList().add(vertexAdapter.marshallStartCoord(inputDXF.getEntities().get(entry.getKey())));
 				break;
 				case Consts.CONTINUITY_END:
-					polyline.getVertexList().add(vertexAdapter.marshall(inputDXF.getEntities().get(entry.getKey())));
+					polyline.getVertexList().add(vertexAdapter.marshallStartCoord(inputDXF.getEntities().get(entry.getKey())));
 					outputDXF.getEntities().add(polyline);
 				break;
 				case Consts.CONTINUITY_NOT:

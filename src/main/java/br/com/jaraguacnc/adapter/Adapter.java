@@ -16,7 +16,7 @@ public class Adapter {
 	public DXF marshall (XML xml){
 		
 		LineAdapter lineAdapter = new LineAdapter();
-		ArcAdapter arcAdapter = new ArcAdapter();
+		BulgeAdapter bulgeAdapter = new BulgeAdapter();
 		CircleAdapter circleAdapter = new CircleAdapter();
 		
 		DXF dxf = new DXF();
@@ -36,7 +36,7 @@ public class Adapter {
 					entity = circleAdapter.marshall(xmlLine);
 				break;
 				case Consts.XML_TYPE_ANG:
-					entity = arcAdapter.marshall(xmlLine);
+					entity = bulgeAdapter.marshall(xmlLine);
 				break;
 			}
 

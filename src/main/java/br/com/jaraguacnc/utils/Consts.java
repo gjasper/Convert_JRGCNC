@@ -24,6 +24,7 @@ public class Consts {
 	public static final String DXF_TYPE_ARC = "ARC";
 	public static final String DXF_TYPE_POLYLINE = "POLYLINE";
 	public static final String DXF_TYPE_VERTEX = "VERTEX";
+	public static final String EXTD_DXF_BULGE = "BULGE";
 	
 	public static final long COLOR_RED = 1;
 	public static final long COLOR_GREEN = 3;

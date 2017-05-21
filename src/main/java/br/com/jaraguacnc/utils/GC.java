@@ -15,5 +15,6 @@ public class GC {
 	public static final int FLAG = 70;
 	public static final int LTYPE = 70;
 	public static final int DESCRIPTION = 3;
+	public static final int BULGE = 42;
 	
 }

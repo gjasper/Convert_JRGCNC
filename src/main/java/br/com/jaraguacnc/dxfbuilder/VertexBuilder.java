@@ -16,6 +16,8 @@ public class VertexBuilder extends EntityBuilder{
 		dxfLine += entity.getCoordinateY() + "\r\n";
 		dxfLine += GC.PRIMARY_Z + "\r\n";
 		dxfLine += Consts.VALUE_DOUBLE_0 + "\r\n";
+		dxfLine += GC.BULGE + "\r\n";
+		dxfLine += entity.getBulge() + "\r\n";
 		
 		return dxfLine;
 	}
