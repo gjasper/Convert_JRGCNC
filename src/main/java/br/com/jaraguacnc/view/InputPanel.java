@@ -1,14 +1,16 @@
-package br.com.jaraguacnc.ui;
+package br.com.jaraguacnc.view;
 
 import java.awt.Component;
 
 import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
+import javax.swing.JFileChooser;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
+import br.com.jaraguacnc.application.Controller;
 import br.com.jaraguacnc.utils.UiConsts;
 
 public class InputPanel extends JPanel{
@@ -21,6 +23,7 @@ public class InputPanel extends JPanel{
 	JTextArea xmlList;
 	JButton openButton;
 	JPanel openButtonPanel;
+	JFileChooser fileChooser;
 	
 	protected InputPanel(){
 
@@ -41,9 +44,60 @@ public class InputPanel extends JPanel{
         openButtonPanel.add(Box.createHorizontalGlue());
         openButtonPanel.add(openButton);
         
+        fileChooser = new JFileChooser();
+        
         add(xmlInputListLabel);
         add(xmlList);
         add(openButtonPanel);
         
-	}	
+	}
+	
+	public void addListener(Controller controller){
+		openButton.addActionListener(controller);
+	}
+
+	public JLabel getXmlInputListLabel() {
+		return xmlInputListLabel;
+	}
+
+	public void setXmlInputListLabel(JLabel xmlInputListLabel) {
+		this.xmlInputListLabel = xmlInputListLabel;
+	}
+
+	public JTextArea getXmlList() {
+		return xmlList;
+	}
+
+	public void setXmlList(JTextArea xmlList) {
+		this.xmlList = xmlList;
+	}
+
+	public JButton getOpenButton() {
+		return openButton;
+	}
+
+	public void setOpenButton(JButton openButton) {
+		this.openButton = openButton;
+	}
+
+	public JPanel getOpenButtonPanel() {
+		return openButtonPanel;
+	}
+
+	public void setOpenButtonPanel(JPanel openButtonPanel) {
+		this.openButtonPanel = openButtonPanel;
+	}
+
+	public JFileChooser getFileChooser() {
+		return fileChooser;
+	}
+
+	public void setFileChooser(JFileChooser fileChooser) {
+		this.fileChooser = fileChooser;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+	
 }

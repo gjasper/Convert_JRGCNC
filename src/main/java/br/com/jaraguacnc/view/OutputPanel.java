@@ -1,4 +1,4 @@
-package br.com.jaraguacnc.ui;
+package br.com.jaraguacnc.view;
 
 import java.awt.Color;
 import java.awt.Component;
