@@ -2,8 +2,6 @@ package br.com.jaraguacnc.utils;
 
 public class Consts {
 	
-	public static final String APPLICATION_NAME = "Convert_JRGCNC";
-	
 	public static final int XML_TYPE_LINE = 1;
 	public static final int XML_TYPE_CIRCLE = 2;
 	public static final int XML_TYPE_ANG = 3;
