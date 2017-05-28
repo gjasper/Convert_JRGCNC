@@ -1,35 +1,38 @@
 package br.com.jaraguacnc.application;
 
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
 
 import br.com.jaraguacnc.dxfmodel.DXF;
 import br.com.jaraguacnc.xmlmodel.XML;
 
 public class Model {
 
-	Map <Integer, Integer> continuityMap;
-	XML xml;
-	DXF dxf;
+	List<XML> xmls;
+	List<DXF> dxfs;
+	String outputRootPath;
 	
-	public Map<Integer, Integer> getContinuityMap() {
-		return continuityMap;
+	public Model(){
+		xmls = new ArrayList<XML>();
+		dxfs = new ArrayList<DXF>();
 	}
-	public void setContinuityMap(Map<Integer, Integer> continuityMap) {
-		this.continuityMap = continuityMap;
+	public List<XML> getXmls() {
+		return xmls;
 	}
-	public XML getXml() {
-		return xml;
+	public void setXmls(List<XML> xmls) {
+		this.xmls = xmls;
 	}
-	public void setXml(XML xml) {
-		this.xml = xml;
+	public List<DXF> getDxfs() {
+		return dxfs;
 	}
-	public DXF getDxf() {
-		return dxf;
+	public void setDxfs(List<DXF> dxfs) {
+		this.dxfs = dxfs;
 	}
-	public void setDxf(DXF dxf) {
-		this.dxf = dxf;
+	public String getOutputRootPath() {
+		return outputRootPath;
 	}
-	
-	
+	public void setOutputRootPath(String outputRootPath) {
+		this.outputRootPath = outputRootPath;
+	}
 	
 }

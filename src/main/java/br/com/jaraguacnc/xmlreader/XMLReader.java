@@ -10,9 +10,8 @@ import br.com.jaraguacnc.xmlmodel.XML;
 
 public class XMLReader {
 
-	public XML read(String filePath){
+	public XML read(File file){
 		try {
-			File file = new File(filePath);
 			JAXBContext jaxbContext;
 			jaxbContext = JAXBContext.newInstance(XML.class);
 			Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();

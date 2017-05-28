@@ -30,6 +30,8 @@ public class Consts {
 	public static final long COLOR_YELLOW = 2;
 	public static final long COLOR_LIGHTBLUE = 4;
 	public static final long COLOR_PINK = 6;
+
+	public static final String ENDLN = "\r\n";
 		
 	public static final String SECTION = "SECTION";
 	public static final String TABLES = "TABLES";

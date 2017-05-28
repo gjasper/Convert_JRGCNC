@@ -10,7 +10,7 @@ public class Convert_JRGCNC {
     public static void main(String[] args) {
     	view = new View();
     	model = new Model();
-        controller = new Controller(new View(), new Model());
+        controller = new Controller(view, model);
         controller.runApplication();
     }
 }

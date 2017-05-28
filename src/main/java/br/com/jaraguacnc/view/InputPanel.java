@@ -44,7 +44,8 @@ public class InputPanel extends JPanel{
         openButtonPanel.add(Box.createHorizontalGlue());
         openButtonPanel.add(openButton);
         
-        fileChooser = new JFileChooser();
+        fileChooser = new JFileChooser("C:\\projetos\\Convert_JRGCNC\\files\\testFile");
+        fileChooser.setMultiSelectionEnabled(true);
         
         add(xmlInputListLabel);
         add(xmlList);

@@ -31,6 +31,8 @@ public class CenterPanel extends JPanel{
 	
 	public void addListener(Controller controller){
 		inputPanel.addListener(controller);
+		convertButton.addActionListener(controller);
+		outputPanel.addListener(controller);
 	}
 
 	public InputPanel getInputPanel() {

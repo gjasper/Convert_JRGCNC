@@ -10,12 +10,14 @@ import br.com.jaraguacnc.utils.Consts;
 
 public class Joiner {
 
-	VertexAdapter vertexAdapter = new VertexAdapter();
-	
-	DXF outputDXF = new DXF();
+	VertexAdapter vertexAdapter;	
+	DXF outputDXF;
 	
 	public DXF join (DXF inputDXF, Map <Integer, Integer> continuityMap){
 		
+		
+		vertexAdapter = new VertexAdapter();
+		outputDXF = new DXF();
 		DXFPolyline polyline = new DXFPolyline();
 				
 		for(Entry<Integer, Integer> entry : continuityMap.entrySet()){	
