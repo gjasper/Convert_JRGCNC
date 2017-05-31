@@ -5,7 +5,6 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.BevelBorder;
-
 import br.com.jaraguacnc.utils.UiConsts;
 
 public class StatusBar extends JPanel{
@@ -23,5 +22,18 @@ public class StatusBar extends JPanel{
 		setBorder(new BevelBorder(BevelBorder.LOWERED));
 		add(statusBarLabel);
 	}
+
+	public JLabel getStatusBarLabel() {
+		return statusBarLabel;
+	}
+
+	public void setStatusBarLabel(JLabel statusBarLabel) {
+		this.statusBarLabel = statusBarLabel;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}	
+	
 	
 }

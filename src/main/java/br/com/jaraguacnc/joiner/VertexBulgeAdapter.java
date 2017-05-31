@@ -5,7 +5,7 @@ import br.com.jaraguacnc.dxfmodel.EXTD_DXFBulge;
 
 public class VertexBulgeAdapter {
 
-	public DXFVertex marshallEndCoord (EXTD_DXFBulge line){
+	public DXFVertex convertEndCoord (EXTD_DXFBulge line){
 		
 		DXFVertex vertex = new DXFVertex(line.getLayer());
 		vertex.setCoordinateX(line.getEndPointX());
@@ -17,7 +17,7 @@ public class VertexBulgeAdapter {
 	}
 	
 	
-	public DXFVertex marshallStartCoord (EXTD_DXFBulge line){
+	public DXFVertex convertStartCoord (EXTD_DXFBulge line){
 		
 		DXFVertex vertex = new DXFVertex(line.getLayer());
 		vertex.setCoordinateX(line.getStartPointX());

@@ -9,13 +9,13 @@ public class XMLMaterial {
 	String materialType;
 	String materialName;
 	String materialThickness;
-	String materialAmount;
+	int materialAmount;
 	String materialEdge;
 	
 	public String getMaterialType() {
 		return materialType;
 	}
-	@XmlElement(name="materialType")
+	@XmlElement(name="MaterialType")
 	public void setMaterialType(String materialType) {
 		this.materialType = materialType;
 	}
@@ -33,11 +33,11 @@ public class XMLMaterial {
 	public void setMaterialThickness(String materialThickness) {
 		this.materialThickness = materialThickness;
 	}
-	public String getMaterialAmount() {
+	public int getMaterialAmount() {
 		return materialAmount;
 	}
 	@XmlElement(name="MaterialAmount")
-	public void setMaterialAmount(String materialAmount) {
+	public void setMaterialAmount(int materialAmount) {
 		this.materialAmount = materialAmount;
 	}
 	public String getMaterialEdge() {

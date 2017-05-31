@@ -2,37 +2,42 @@ package br.com.jaraguacnc.application;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import br.com.jaraguacnc.dxfmodel.DXF;
-import br.com.jaraguacnc.xmlmodel.XML;
+import br.com.jaraguacnc.dxfmodel.WrappedDXF;
+import br.com.jaraguacnc.xmlmodel.WrappedXML;
 
 public class Model {
 
-	List<XML> xmls;
-	List<DXF> dxfs;
-	String outputRootPath;
+	private List<WrappedXML> wrappedXMLs;
+	private List<WrappedDXF> wrappedDFXs;
+	private String outputRootPath;
 	
 	public Model(){
-		xmls = new ArrayList<XML>();
-		dxfs = new ArrayList<DXF>();
+		wrappedXMLs = new ArrayList<WrappedXML>();
+		wrappedDFXs = new ArrayList<WrappedDXF>();
 	}
-	public List<XML> getXmls() {
-		return xmls;
+	public List<WrappedXML> getWrappedXMLs() {
+		return wrappedXMLs;
 	}
-	public void setXmls(List<XML> xmls) {
-		this.xmls = xmls;
+
+	public void setWrappedXMLs(List<WrappedXML> wrappedXMLs) {
+		this.wrappedXMLs = wrappedXMLs;
 	}
-	public List<DXF> getDxfs() {
-		return dxfs;
+
+	public List<WrappedDXF> getWrappedDFXs() {
+		return wrappedDFXs;
 	}
-	public void setDxfs(List<DXF> dxfs) {
-		this.dxfs = dxfs;
+
+	public void setWrappedDFXs(List<WrappedDXF> wrappedDFXs) {
+		this.wrappedDFXs = wrappedDFXs;
 	}
+
 	public String getOutputRootPath() {
 		return outputRootPath;
 	}
+
 	public void setOutputRootPath(String outputRootPath) {
 		this.outputRootPath = outputRootPath;
 	}
+	
 	
 }

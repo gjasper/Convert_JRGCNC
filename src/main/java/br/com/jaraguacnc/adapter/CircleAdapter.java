@@ -5,7 +5,7 @@ import br.com.jaraguacnc.xmlmodel.XMLLine;
 
 public class CircleAdapter {
 	
-	public DXFCircle marshall(XMLLine xmlLine){
+	public DXFCircle convert(XMLLine xmlLine){
 		
 		DXFCircle dxfCircle = new DXFCircle(); 
 		

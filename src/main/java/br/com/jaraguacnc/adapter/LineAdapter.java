@@ -5,7 +5,7 @@ import br.com.jaraguacnc.xmlmodel.XMLLine;
 
 public class LineAdapter {
 
-	public DXFLine marshall(XMLLine xmlLine){
+	public DXFLine convert(XMLLine xmlLine){
 		
 		DXFLine dxfLine = new DXFLine(); 
 		

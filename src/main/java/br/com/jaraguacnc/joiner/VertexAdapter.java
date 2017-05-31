@@ -11,30 +11,30 @@ public class VertexAdapter {
 	VertexLineAdapter vertexLineAdapter = new VertexLineAdapter();
 	VertexBulgeAdapter vertexBulgeAdapter = new VertexBulgeAdapter();
 	
-	public DXFVertex marshallEndCoord (DXFEntity entity){
+	public DXFVertex convertEndCoord (DXFEntity entity){
 		
 		DXFVertex vertex = new DXFVertex();
 		
 		switch(entity.getType()){
 			case Consts.DXF_TYPE_LINE:
-				return vertexLineAdapter.marshallEndCoord((DXFLine) entity);
+				return vertexLineAdapter.convertEndCoord((DXFLine) entity);
 			case Consts.EXTD_DXF_BULGE:
-				return vertexBulgeAdapter.marshallEndCoord((EXTD_DXFBulge) entity);
+				return vertexBulgeAdapter.convertEndCoord((EXTD_DXFBulge) entity);
 		}
 		
 		return vertex;
 		
 	}
 	
-	public DXFVertex marshallStartCoord (DXFEntity entity){
+	public DXFVertex convertStartCoord (DXFEntity entity){
 		
 		DXFVertex vertex = new DXFVertex();
 		
 		switch(entity.getType()){
 			case Consts.DXF_TYPE_LINE:
-				return vertexLineAdapter.marshallStartCoord((DXFLine) entity);
+				return vertexLineAdapter.convertStartCoord((DXFLine) entity);
 			case Consts.EXTD_DXF_BULGE:
-				return vertexBulgeAdapter.marshallStartCoord((EXTD_DXFBulge) entity);
+				return vertexBulgeAdapter.convertStartCoord((EXTD_DXFBulge) entity);
 		}
 		
 		return vertex;

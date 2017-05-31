@@ -1,7 +1,6 @@
 package br.com.jaraguacnc.view;
 
 import java.awt.Component;
-
 import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
@@ -49,8 +48,7 @@ public class InputPanel extends JPanel{
         
         add(xmlInputListLabel);
         add(xmlList);
-        add(openButtonPanel);
-        
+        add(openButtonPanel);       
 	}
 	
 	public void addListener(Controller controller){

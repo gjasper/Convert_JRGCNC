@@ -30,6 +30,7 @@ public class View extends JPanel{
 
 	public void addListener(Controller controller){
 		centerPanel.addListener(controller);
+		menuBar.addListener(controller);
 	}
 
 	public MenuBar getMenuBar() {

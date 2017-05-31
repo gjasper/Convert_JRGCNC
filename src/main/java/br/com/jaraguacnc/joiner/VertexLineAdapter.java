@@ -5,7 +5,7 @@ import br.com.jaraguacnc.dxfmodel.DXFVertex;
 
 public class VertexLineAdapter {
 
-	public DXFVertex marshallEndCoord (DXFLine line){
+	public DXFVertex convertEndCoord (DXFLine line){
 		
 		DXFVertex vertex = new DXFVertex(line.getLayer());
 		vertex.setCoordinateX(line.getEndPointX());
@@ -17,7 +17,7 @@ public class VertexLineAdapter {
 	}
 	
 	
-	public DXFVertex marshallStartCoord (DXFLine line){
+	public DXFVertex convertStartCoord (DXFLine line){
 		
 		DXFVertex vertex = new DXFVertex(line.getLayer());
 		vertex.setCoordinateX(line.getStartPointX());

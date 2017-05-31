@@ -5,7 +5,7 @@ import br.com.jaraguacnc.xmlmodel.XMLLine;
 
 public class BulgeAdapter {
 	
-	public EXTD_DXFBulge marshall (XMLLine xmlLine){
+	public EXTD_DXFBulge convert (XMLLine xmlLine){
 		
 		EXTD_DXFBulge bulge = new EXTD_DXFBulge();
 		bulge.setStartPointX(xmlLine.getStartAngX());

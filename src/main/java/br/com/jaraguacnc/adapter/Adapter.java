@@ -13,7 +13,7 @@ import br.com.jaraguacnc.xmlmodel.XMLLine;
 
 public class Adapter {
 
-	public DXF marshall (XML xml){
+	public DXF convert (XML xml){
 		
 		LineAdapter lineAdapter = new LineAdapter();
 		BulgeAdapter bulgeAdapter = new BulgeAdapter();
@@ -30,13 +30,13 @@ public class Adapter {
 			
 			switch(xmlLine.getLineType()){
 				case Consts.XML_TYPE_LINE:
-					entity = lineAdapter.marshall(xmlLine);
+					entity = lineAdapter.convert(xmlLine);
 				break;
 				case Consts.XML_TYPE_CIRCLE:
-					entity = circleAdapter.marshall(xmlLine);
+					entity = circleAdapter.convert(xmlLine);
 				break;
 				case Consts.XML_TYPE_ANG:
-					entity = bulgeAdapter.marshall(xmlLine);
+					entity = bulgeAdapter.convert(xmlLine);
 				break;
 			}
 
