@@ -1,7 +1,8 @@
 package br.com.jaraguacnc.dxfwriter;
 
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintWriter;
 import br.com.jaraguacnc.dxfbuilder.DXFBuilder;
 import br.com.jaraguacnc.dxfmodel.WrappedDXF;
 
@@ -11,12 +12,14 @@ public class DXFWriter {
 		
 		DXFBuilder builder = new DXFBuilder();
 		
-		try{
-		    PrintWriter writer = new PrintWriter(rootPath + wrappedDXF.getFullPath(), "UTF-8");
-		    writer.print(builder.build(wrappedDXF.getDxf()));
+		try{	    
+		    File file = new File(rootPath + wrappedDXF.getFullPath());
+		    file.getParentFile().mkdirs();
+		    FileWriter writer = new FileWriter(file);
+		    writer.write(builder.build(wrappedDXF.getDxf()));
 		    writer.close();
 		} catch (IOException e) {
-		   // do something
+		   System.out.println(e);
 		}
 		
 		return true;

@@ -32,7 +32,8 @@ public class Facade {
 			dxf = joiner.join(dxf, continuityMap);
 			dxfs.add(wrapper.marshall(dxf, wrappedXML));
 		}
+		dxfs = wrapper.replicate(dxfs);
 		return dxfs;
 	}
-	
+		
 }

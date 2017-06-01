@@ -64,51 +64,56 @@ public class Controller implements ActionListener{
     }
 
 	@Override
-	public void actionPerformed(ActionEvent e) {
+	public void actionPerformed(ActionEvent event) {
 		
 		MenuBar menuBar = view.getMenuBar();
 		CenterPanel centerPanel = view.getCenterPanel();
 		InputPanel inputPanel = centerPanel.getInputPanel();
 		OutputPanel outputPanel = centerPanel.getOutputPanel();
 		StatusBar statusBar = view.getStatusBar();
-		String msg = new String();
 		
-		if(e.getSource().equals(inputPanel.getOpenButton())){
-			int returnVal = inputPanel.getFileChooser().showOpenDialog(inputPanel);
-			if (returnVal == JFileChooser.APPROVE_OPTION) {
-				inputPanel.getXmlList().setText("");
-				outputPanel.getDxfList().setText("");	
+		try {
+			
+			if(event.getSource().equals(inputPanel.getOpenButton())){
+				int returnVal = inputPanel.getFileChooser().showOpenDialog(inputPanel);
+				if (returnVal == JFileChooser.APPROVE_OPTION) {
+					inputPanel.getXmlList().setText("");
+					outputPanel.getDxfList().setText("");	
+					model.getWrappedXMLs().clear();
+					model.getWrappedDFXs().clear();
+		            for(File file : inputPanel.getFileChooser().getSelectedFiles()){
+		            	model.getWrappedXMLs().add(wrapper.marshall(reader.read(file), file.getName()));
+		            	inputPanel.getXmlList().append(file.getName() + Consts.ENDLN);
+		            }
+				}
+			}else if (event.getSource().equals(centerPanel.getConvertButton())){
+				outputPanel.getDxfList().setText("");
+				model.setWrappedDFXs(facade.convert(model.getWrappedXMLs()));
+				for(WrappedDXF wrappedDXF : model.getWrappedDFXs()){
+	            	outputPanel.getDxfList().append(wrappedDXF.getFullPath() + Consts.ENDLN);
+	            }
+			}else if(event.getSource().equals(outputPanel.getOutputFolderButton())){
+				int returnVal = outputPanel.getFolderChooser().showOpenDialog(outputPanel);
+				if(returnVal == JFileChooser.APPROVE_OPTION){
+					outputPanel.getOutputFolderTextField().setText(outputPanel.getFolderChooser().getSelectedFile().toString());
+					model.setOutputRootPath(outputPanel.getOutputFolderTextField().getText());
+				}
+			}else if(event.getSource().equals(menuBar.getNewButton())){
 				model.getWrappedXMLs().clear();
 				model.getWrappedDFXs().clear();
-	            for(File file : inputPanel.getFileChooser().getSelectedFiles()){
-	            	model.getWrappedXMLs().add(wrapper.marshall(reader.read(file), file.getName()));
-	            	inputPanel.getXmlList().append(file.getName() + Consts.ENDLN);
-	            }
+				inputPanel.getXmlList().setText("");
+				outputPanel.getDxfList().setText("");
+				model.setOutputRootPath("");
+				outputPanel.getOutputFolderTextField().setText("");
+			}else if(event.getSource().equals(menuBar.getSaveButton())){
+				for(WrappedDXF wrappedDXF : model.getWrappedDFXs()){
+					writer.write(wrappedDXF, model.getOutputRootPath());
+				}
+				statusBar.getStatusBarLabel().setText("Success");
 			}
-		}else if (e.getSource().equals(centerPanel.getConvertButton())){
-			outputPanel.getDxfList().setText("");
-			model.setWrappedDFXs(facade.convert(model.getWrappedXMLs()));
-			for(WrappedDXF wrappedDXF : model.getWrappedDFXs()){
-            	outputPanel.getDxfList().append(wrappedDXF.getFullPath() + Consts.ENDLN);
-            }
-		}else if(e.getSource().equals(outputPanel.getOutputFolderButton())){
-			int returnVal = outputPanel.getFolderChooser().showOpenDialog(outputPanel);
-			if(returnVal == JFileChooser.APPROVE_OPTION){
-				outputPanel.getOutputFolderTextField().setText(outputPanel.getFolderChooser().getSelectedFile().toString());
-				model.setOutputRootPath(outputPanel.getOutputFolderTextField().getText());
-			}
-		}else if(e.getSource().equals(menuBar.getNewButton())){
-			model.getWrappedXMLs().clear();
-			model.getWrappedDFXs().clear();
-			inputPanel.getXmlList().setText("");
-			outputPanel.getDxfList().setText("");
-			model.setOutputRootPath("");
-			outputPanel.getOutputFolderTextField().setText("");
-		}else if(e.getSource().equals(menuBar.getSaveButton())){
-			for(WrappedDXF wrappedDXF : model.getWrappedDFXs()){
-				writer.write(wrappedDXF, model.getOutputRootPath());
-			}
-			statusBar.getStatusBarLabel().setText("Success");
+		
+		} catch (Exception e) {
+			statusBar.getStatusBarLabel().setText(e.getMessage());
 		}
 		
 	}

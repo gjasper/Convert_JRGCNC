@@ -1,13 +1,20 @@
 package br.com.jaraguacnc.dxfmodel;
 
-public class WrappedDXF {
+public class WrappedDXF implements Cloneable{
 
 	DXF dxf;
 	String name;
 	String path;
-	int amount;
+	int amount;	
 	
-	
+	public WrappedDXF getClone(){
+        try {
+            return (WrappedDXF) super.clone();
+        } catch (CloneNotSupportedException e) {
+            System.out.println (" Cloning not allowed. " );
+            return this;
+        }
+	}	
 	public int getAmount() {
 		return amount;
 	}
