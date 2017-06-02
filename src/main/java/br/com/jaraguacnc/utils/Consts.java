@@ -5,6 +5,7 @@ public class Consts {
 	public static final int XML_TYPE_LINE = 1;
 	public static final int XML_TYPE_CIRCLE = 2;
 	public static final int XML_TYPE_ANG = 3;
+	
 
 	public static final int VALUE_1 = 1;
 	public static final double VALUE_DOUBLE_0 = 0.0;

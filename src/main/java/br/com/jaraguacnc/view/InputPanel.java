@@ -1,13 +1,16 @@
 package br.com.jaraguacnc.view;
 
 import java.awt.Component;
+import java.awt.Dimension;
+
 import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JTextArea;
+import javax.swing.JScrollPane;
+import javax.swing.JTextPane;
 
 import br.com.jaraguacnc.application.Controller;
 import br.com.jaraguacnc.utils.UiConsts;
@@ -19,7 +22,7 @@ public class InputPanel extends JPanel{
 	 */
 	private static final long serialVersionUID = 1L;
 	JLabel xmlInputListLabel;
-	JTextArea xmlList;
+	JTextPane xmlList;
 	JButton openButton;
 	JPanel openButtonPanel;
 	JFileChooser fileChooser;
@@ -29,12 +32,15 @@ public class InputPanel extends JPanel{
 		setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
         
         xmlInputListLabel = new JLabel(UiConsts.XML_INPUT_LIST_LABEL_TEXT);
-        xmlList = new JTextArea(UiConsts.INPUT_QTD_ROWS,UiConsts.INPUT_QTD_COLUMNS);
+        xmlList = new JTextPane();
         xmlList.setEditable(false);
+        xmlList.setPreferredSize(new Dimension(500, 500));
+        JScrollPane scrollXmliList = new JScrollPane (xmlList, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+        
         openButton = new JButton(UiConsts.OPEN_BUTTON_TEXT);
         
         xmlInputListLabel.setAlignmentX(Component.LEFT_ALIGNMENT);
-        xmlList.setAlignmentX(Component.LEFT_ALIGNMENT);
+        scrollXmliList.setAlignmentX(Component.LEFT_ALIGNMENT);
         openButton.setAlignmentX(Component.RIGHT_ALIGNMENT);
         
 		openButtonPanel = new JPanel();
@@ -47,7 +53,7 @@ public class InputPanel extends JPanel{
         fileChooser.setMultiSelectionEnabled(true);
         
         add(xmlInputListLabel);
-        add(xmlList);
+        add(scrollXmliList);
         add(openButtonPanel);       
 	}
 	
@@ -63,11 +69,11 @@ public class InputPanel extends JPanel{
 		this.xmlInputListLabel = xmlInputListLabel;
 	}
 
-	public JTextArea getXmlList() {
+	public JTextPane getXmlList() {
 		return xmlList;
 	}
 
-	public void setXmlList(JTextArea xmlList) {
+	public void setXmlList(JTextPane xmlList) {
 		this.xmlList = xmlList;
 	}
 

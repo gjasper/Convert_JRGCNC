@@ -16,8 +16,10 @@ public class UiConsts {
 	public static final String STATUS_BAR_READY = "Ready";
 	
 
+	public static final int BORDER_SIZE = 5;
+
 	public static final int INPUT_QTD_ROWS = 50;	
-	public static final int INPUT_QTD_COLUMNS = 100;
+	public static final int INPUT_QTD_COLUMNS = 30;
 	public static final int OUTPUT_QTD_ROWS = INPUT_QTD_ROWS;	
 	public static final int OUTPUT_QTD_COLUMNS = INPUT_QTD_COLUMNS;
 	public static final int OUTPUT_FOLDER_QTD_COLUMNS = OUTPUT_QTD_COLUMNS - 20;

@@ -2,14 +2,16 @@ package br.com.jaraguacnc.view;
 
 import java.awt.Color;
 import java.awt.Component;
+import java.awt.Dimension;
 
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JTextArea;
+import javax.swing.JScrollPane;
 import javax.swing.JTextField;
+import javax.swing.JTextPane;
 
 import br.com.jaraguacnc.application.Controller;
 import br.com.jaraguacnc.utils.UiConsts;
@@ -21,7 +23,7 @@ public class OutputPanel extends JPanel{
 	 */
 	private static final long serialVersionUID = 1L;
 	JLabel dxfListLabel;
-    JTextArea dxfList;
+    JTextPane dxfList;
     JLabel outputFolderLabel;
     JPanel outputFolderPanel;
     JPanel outputFolderSelectionPanel;
@@ -34,13 +36,17 @@ public class OutputPanel extends JPanel{
 		setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
         
         dxfListLabel = new JLabel(UiConsts.DXF_OUTPUT_LIST_LABEL_TEXT);
-        dxfList = new JTextArea(UiConsts.OUTPUT_QTD_ROWS,UiConsts.OUTPUT_QTD_COLUMNS);
+        dxfList = new JTextPane();
         dxfList.setEditable(false);
+        dxfList.setPreferredSize(new Dimension(500, 500));
+        JScrollPane scrollXmliList = new JScrollPane (dxfList, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+        
         outputFolderLabel = new JLabel(UiConsts.OUTPUT_FOLDER_LABEL_TEXT);
         outputFolderPanel = generateOutputFolderSelectionPanel();
+        outputFolderPanel.setMaximumSize(new Dimension(Integer.MAX_VALUE, 25));
         
         dxfListLabel.setAlignmentX(Component.LEFT_ALIGNMENT);
-        dxfList.setAlignmentX(Component.LEFT_ALIGNMENT);
+        scrollXmliList.setAlignmentX(Component.LEFT_ALIGNMENT);
         outputFolderLabel.setAlignmentX(Component.LEFT_ALIGNMENT);
         outputFolderPanel.setAlignmentX(Component.LEFT_ALIGNMENT);
         
@@ -48,7 +54,7 @@ public class OutputPanel extends JPanel{
         folderChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
         
         add(dxfListLabel);
-        add(dxfList);
+        add(scrollXmliList);
         add(outputFolderLabel);
         add(outputFolderPanel);
                 
@@ -81,11 +87,11 @@ public class OutputPanel extends JPanel{
 		this.dxfListLabel = dxfListLabel;
 	}
 
-	public JTextArea getDxfList() {
+	public JTextPane getDxfList() {
 		return dxfList;
 	}
 
-	public void setDxfList(JTextArea dxfList) {
+	public void setDxfList(JTextPane dxfList) {
 		this.dxfList = dxfList;
 	}
 

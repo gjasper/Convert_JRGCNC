@@ -1,5 +1,6 @@
 package br.com.jaraguacnc.application;
 
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -7,7 +8,6 @@ import java.io.File;
 
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
-
 import br.com.jaraguacnc.dxfmodel.WrappedDXF;
 import br.com.jaraguacnc.dxfwriter.DXFWriter;
 import br.com.jaraguacnc.utils.Consts;
@@ -72,6 +72,9 @@ public class Controller implements ActionListener{
 		OutputPanel outputPanel = centerPanel.getOutputPanel();
 		StatusBar statusBar = view.getStatusBar();
 		
+		statusBar.getStatusBarLabel().setForeground(Color.black);
+		statusBar.getStatusBarLabel().setText("Ready");
+		
 		try {
 			
 			if(event.getSource().equals(inputPanel.getOpenButton())){
@@ -83,14 +86,17 @@ public class Controller implements ActionListener{
 					model.getWrappedDFXs().clear();
 		            for(File file : inputPanel.getFileChooser().getSelectedFiles()){
 		            	model.getWrappedXMLs().add(wrapper.marshall(reader.read(file), file.getName()));
-		            	inputPanel.getXmlList().append(file.getName() + Consts.ENDLN);
+		            	inputPanel.getXmlList().setText(inputPanel.getXmlList().getText() + (file.getName() + Consts.ENDLN));
 		            }
 				}
 			}else if (event.getSource().equals(centerPanel.getConvertButton())){
+				if(model.getWrappedDFXs().isEmpty()){
+					throw new Exception("Missing XML files");
+				}
 				outputPanel.getDxfList().setText("");
 				model.setWrappedDFXs(facade.convert(model.getWrappedXMLs()));
 				for(WrappedDXF wrappedDXF : model.getWrappedDFXs()){
-	            	outputPanel.getDxfList().append(wrappedDXF.getFullPath() + Consts.ENDLN);
+	            	outputPanel.getDxfList().setText(outputPanel.getDxfList().getText() + (wrappedDXF.getFullPath() + Consts.ENDLN));
 	            }
 			}else if(event.getSource().equals(outputPanel.getOutputFolderButton())){
 				int returnVal = outputPanel.getFolderChooser().showOpenDialog(outputPanel);
@@ -106,13 +112,18 @@ public class Controller implements ActionListener{
 				model.setOutputRootPath("");
 				outputPanel.getOutputFolderTextField().setText("");
 			}else if(event.getSource().equals(menuBar.getSaveButton())){
+				if(model.getWrappedDFXs().isEmpty()){
+					throw new Exception("Missing DXF files");
+				}
 				for(WrappedDXF wrappedDXF : model.getWrappedDFXs()){
 					writer.write(wrappedDXF, model.getOutputRootPath());
 				}
-				statusBar.getStatusBarLabel().setText("Success");
+				statusBar.getStatusBarLabel().setForeground(Color.blue);
+				statusBar.getStatusBarLabel().setText("Files succesfully saved");
 			}
 		
 		} catch (Exception e) {
+			statusBar.getStatusBarLabel().setForeground(Color.red);
 			statusBar.getStatusBarLabel().setText(e.getMessage());
 		}
 		

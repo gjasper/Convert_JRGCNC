@@ -10,7 +10,7 @@ import br.com.jaraguacnc.xmlmodel.XML;
 
 public class XMLReader {
 
-	public XML read(File file){
+	public XML read(File file) throws Exception{
 		try {
 			JAXBContext jaxbContext;
 			jaxbContext = JAXBContext.newInstance(XML.class);
@@ -18,10 +18,8 @@ public class XMLReader {
 			XML xml = (XML) jaxbUnmarshaller.unmarshal(file);
 			return xml;
 		} catch (JAXBException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			throw new Exception("XML file reader error: " + e.getLinkedException());
 		}
-		return null;
 	}
 	
 }

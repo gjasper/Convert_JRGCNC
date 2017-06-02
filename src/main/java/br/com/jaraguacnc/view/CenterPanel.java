@@ -1,5 +1,6 @@
 package br.com.jaraguacnc.view;
 
+import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JPanel;
@@ -21,8 +22,10 @@ public class CenterPanel extends JPanel{
         
         setLayout(new BoxLayout(this, BoxLayout.LINE_AXIS));
         inputPanel = new InputPanel();
+        inputPanel.setBorder(BorderFactory.createEmptyBorder(UiConsts.BORDER_SIZE,UiConsts.BORDER_SIZE,UiConsts.BORDER_SIZE,UiConsts.BORDER_SIZE));
         convertButton = new JButton(UiConsts.CONVERT_BUTTON_TEXT);
         outputPanel = new OutputPanel();
+        outputPanel.setBorder(BorderFactory.createEmptyBorder(UiConsts.BORDER_SIZE,UiConsts.BORDER_SIZE,UiConsts.BORDER_SIZE,UiConsts.BORDER_SIZE));
         
         add(inputPanel);
         add(convertButton);
