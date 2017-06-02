@@ -90,14 +90,15 @@ public class Controller implements ActionListener{
 		            }
 				}
 			}else if (event.getSource().equals(centerPanel.getConvertButton())){
-				if(model.getWrappedDFXs().isEmpty()){
+				if(model.getWrappedXMLs().isEmpty()){
 					throw new Exception("Missing XML files");
+				}else{
+					outputPanel.getDxfList().setText("");
+					model.setWrappedDFXs(facade.convert(model.getWrappedXMLs()));
+					for(WrappedDXF wrappedDXF : model.getWrappedDFXs()){
+		            	outputPanel.getDxfList().setText(outputPanel.getDxfList().getText() + (wrappedDXF.getFullPath() + Consts.ENDLN));
+		            }
 				}
-				outputPanel.getDxfList().setText("");
-				model.setWrappedDFXs(facade.convert(model.getWrappedXMLs()));
-				for(WrappedDXF wrappedDXF : model.getWrappedDFXs()){
-	            	outputPanel.getDxfList().setText(outputPanel.getDxfList().getText() + (wrappedDXF.getFullPath() + Consts.ENDLN));
-	            }
 			}else if(event.getSource().equals(outputPanel.getOutputFolderButton())){
 				int returnVal = outputPanel.getFolderChooser().showOpenDialog(outputPanel);
 				if(returnVal == JFileChooser.APPROVE_OPTION){
@@ -114,12 +115,15 @@ public class Controller implements ActionListener{
 			}else if(event.getSource().equals(menuBar.getSaveButton())){
 				if(model.getWrappedDFXs().isEmpty()){
 					throw new Exception("Missing DXF files");
-				}
-				for(WrappedDXF wrappedDXF : model.getWrappedDFXs()){
-					writer.write(wrappedDXF, model.getOutputRootPath());
-				}
-				statusBar.getStatusBarLabel().setForeground(Color.blue);
-				statusBar.getStatusBarLabel().setText("Files succesfully saved");
+				}else if(model.getOutputRootPath().equals("")){
+					throw new Exception("Missing output folder");
+				}else{
+					for(WrappedDXF wrappedDXF : model.getWrappedDFXs()){
+						writer.write(wrappedDXF, model.getOutputRootPath());
+					}
+					statusBar.getStatusBarLabel().setForeground(Color.blue);
+					statusBar.getStatusBarLabel().setText("Files succesfully saved");	
+				}				
 			}
 		
 		} catch (Exception e) {

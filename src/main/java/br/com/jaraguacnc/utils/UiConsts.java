@@ -7,7 +7,7 @@ public class UiConsts {
 	public static final String XML_INPUT_LIST_LABEL_TEXT = "Input XML files:";
 	public static final String OPEN_BUTTON_TEXT = "Open";
 	public static final String CONVERT_BUTTON_TEXT = "Convert";
-	public static final String OUTPUT_FOLDER_LABEL_TEXT = "Output root folder:";
+	public static final String OUTPUT_FOLDER_LABEL_TEXT = "Output folder:";
 	public static final String OUTPUT_FOLDER_BUTTON_TEXT = "...";
 	public static final String DXF_OUTPUT_LIST_LABEL_TEXT = "Output DXF files:";
 	public static final String NEW_BUTTON_TEXT = "New";
