@@ -5,10 +5,11 @@ import java.io.FileWriter;
 import java.io.IOException;
 import br.com.jaraguacnc.dxfbuilder.DXFBuilder;
 import br.com.jaraguacnc.dxfmodel.WrappedDXF;
+import br.com.jaraguacnc.utils.UiConsts;
 
 public class DXFWriter {
 
-	public boolean write(WrappedDXF wrappedDXF, String rootPath){
+	public boolean write(WrappedDXF wrappedDXF, String rootPath) throws Exception{
 		
 		DXFBuilder builder = new DXFBuilder();
 		
@@ -19,7 +20,7 @@ public class DXFWriter {
 		    writer.write(builder.build(wrappedDXF.getDxf()));
 		    writer.close();
 		} catch (IOException e) {
-		   System.out.println(e);
+			throw new Exception(UiConsts.ERROR_WRITING + e.getMessage());
 		}
 		
 		return true;

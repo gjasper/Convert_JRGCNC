@@ -4,7 +4,6 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 import br.com.jaraguacnc.dxfmodel.DXF;
-import br.com.jaraguacnc.dxfmodel.DXFEntity;
 import br.com.jaraguacnc.dxfmodel.DXFPolyline;
 import br.com.jaraguacnc.utils.Consts;
 
@@ -39,15 +38,7 @@ public class Joiner {
 				break;
 			}
 		}
-		
-		for(DXFEntity entity : outputDXF.getEntities()){
-			if(entity.getType().equals(Consts.DXF_TYPE_POLYLINE)){
-				inputDXF.getLayerByName(entity.getLayer()).setName(Consts.PERFILAGEM);
-				entity.setLayer(inputDXF.getLayerByName(Consts.PERFILAGEM).getName());
-				break;
-			}
-		}		
-		
+				
 		outputDXF.setTables(inputDXF.getTables());
 		
 		return outputDXF;

@@ -39,7 +39,6 @@ public class Adapter {
 					entity = bulgeAdapter.convert(xmlLine);
 				break;
 			}
-
 			
 			if(!dxf.getTables().contains(new DXFLayer(entity.getLayer()))){
 				DXFLayer newLayer = new DXFLayer();
@@ -63,11 +62,13 @@ public class Adapter {
 		for (int i = 0; i < xml.getAsk().getLines().size(); i++) {
 			if(xml.getAsk().getLines().get(i).isContinued() && (i == 0)){
 				map.put(i, Consts.CONTINUITY_START);
+			} else if (!xml.getAsk().getLines().get(i).isContinued() && (i == 0)){
+				map.put(i, Consts.CONTINUITY_NOT);
 			} else if (xml.getAsk().getLines().get(i).isContinued() && !xml.getAsk().getLines().get(i-1).isContinued()){
 				map.put(i, Consts.CONTINUITY_START);
 			} else if (xml.getAsk().getLines().get(i).isContinued() && xml.getAsk().getLines().get(i-1).isContinued()){
 				map.put(i, Consts.CONTINUITY_MID);
-			} else if (!xml.getAsk().getLines().get(i).isContinued() && xml.getAsk().getLines().get(i-1).isContinued()){
+			} else if (xml.getAsk().getLines().get(i-1)!=null && !xml.getAsk().getLines().get(i).isContinued() && xml.getAsk().getLines().get(i-1).isContinued()){
 				map.put(i, Consts.CONTINUITY_END);
 			} else {
 				map.put(i, Consts.CONTINUITY_NOT);

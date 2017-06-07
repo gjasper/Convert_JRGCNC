@@ -14,6 +14,12 @@ public class UiConsts {
 	public static final String SAVE_BUTTON_TEXT = "Save";
 	
 	public static final String STATUS_BAR_READY = "Ready";
+	public static final String ERROR_MISSING_DXF = "Missing DXF files";
+	public static final String ERROR_MISSING_XML = "Missing XML files";
+	public static final String ERROR_OUTPUT_FOLDER = "Missing output folder";
+	public static final String ERROR_WRITING = "DXF file writer error: ";
+	public static final String ERROR_READING = "XML file reader error: ";
+	public static final String WRITING_SUCCESS = "Files succesfully saved! ";
 	
 
 	public static final int BORDER_SIZE = 5;

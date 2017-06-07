@@ -8,6 +8,7 @@ import java.io.File;
 
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
+
 import br.com.jaraguacnc.dxfmodel.WrappedDXF;
 import br.com.jaraguacnc.dxfwriter.DXFWriter;
 import br.com.jaraguacnc.utils.Consts;
@@ -73,7 +74,7 @@ public class Controller implements ActionListener{
 		StatusBar statusBar = view.getStatusBar();
 		
 		statusBar.getStatusBarLabel().setForeground(Color.black);
-		statusBar.getStatusBarLabel().setText("Ready");
+		statusBar.getStatusBarLabel().setText(UiConsts.STATUS_BAR_READY);
 		
 		try {
 			
@@ -91,7 +92,7 @@ public class Controller implements ActionListener{
 				}
 			}else if (event.getSource().equals(centerPanel.getConvertButton())){
 				if(model.getWrappedXMLs().isEmpty()){
-					throw new Exception("Missing XML files");
+					throw new Exception(UiConsts.ERROR_MISSING_XML);
 				}else{
 					outputPanel.getDxfList().setText("");
 					model.setWrappedDFXs(facade.convert(model.getWrappedXMLs()));
@@ -113,24 +114,41 @@ public class Controller implements ActionListener{
 				model.setOutputRootPath("");
 				outputPanel.getOutputFolderTextField().setText("");
 			}else if(event.getSource().equals(menuBar.getSaveButton())){
+				
+				updateOutputFolderPath();
+				
 				if(model.getWrappedDFXs().isEmpty()){
-					throw new Exception("Missing DXF files");
+					throw new Exception(UiConsts.ERROR_MISSING_DXF);
 				}else if(model.getOutputRootPath().equals("")){
-					throw new Exception("Missing output folder");
+					throw new Exception(UiConsts.ERROR_OUTPUT_FOLDER);
 				}else{
 					for(WrappedDXF wrappedDXF : model.getWrappedDFXs()){
 						writer.write(wrappedDXF, model.getOutputRootPath());
 					}
 					statusBar.getStatusBarLabel().setForeground(Color.blue);
-					statusBar.getStatusBarLabel().setText("Files succesfully saved");	
+					statusBar.getStatusBarLabel().setText(UiConsts.WRITING_SUCCESS);	
 				}				
 			}
 		
 		} catch (Exception e) {
 			statusBar.getStatusBarLabel().setForeground(Color.red);
-			statusBar.getStatusBarLabel().setText(e.getMessage());
+			if(e.getMessage()!= null){
+				statusBar.getStatusBarLabel().setText(e.getMessage());
+			}else{
+				statusBar.getStatusBarLabel().setText(e.getClass().getName());
+			}
 		}
 		
+	}
+	
+	public void updateOutputFolderPath(){
+		if(model.getOutputRootPath().equals("")){
+			if(view.getCenterPanel().getOutputPanel().getOutputFolderTextField().getText().equals("")){
+				return;
+			}else{
+				model.setOutputRootPath(view.getCenterPanel().getOutputPanel().getOutputFolderTextField().getText());
+			}			
+		}
 	}
 	
 	public Model getModel() {

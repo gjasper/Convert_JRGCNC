@@ -20,7 +20,7 @@
 	</properties>
 	
 	<build>
-		<finalName>Convert - JARAGUÁ CNC</finalName>
+		<finalName>Convert_JRGCNC</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>

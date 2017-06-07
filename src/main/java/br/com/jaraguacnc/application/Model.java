@@ -14,6 +14,7 @@ public class Model {
 	public Model(){
 		wrappedXMLs = new ArrayList<WrappedXML>();
 		wrappedDFXs = new ArrayList<WrappedDXF>();
+		outputRootPath = "";
 	}
 	public List<WrappedXML> getWrappedXMLs() {
 		return wrappedXMLs;
